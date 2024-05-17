@@ -3,69 +3,149 @@
 <head>
     <meta charset="UTF-8">
     <title>FAQ</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            padding: 20px;
+        }
+    </style>
 </head>
-
 <body>
-<p>
-<h1>FAQ - Frequently Asked Questions</h1>
+<div class="container mt-5">
+    <h1 class="text-center">FAQ - Frequently Asked Questions</h1>
+    <div class="accordion" id="faqAccordion">
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingOne">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    <strong>Welche Unterlagen benötige ich für die Anmeldung zum Führerschein?</strong>
+                </button>
+            </h2>
+            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                    Zur Anmeldung benötigen Sie: Personalausweis, Erste-Hilfe-Kurs-Bescheinigung, 2 EU-Passbilder, (Brillenträger: eine Sehtestbescheinigung)
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingTwo">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    <strong>Wie viel kostet der Führerschein insgesamt?</strong>
+                </button>
+            </h2>
+            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                    Auto Führerschein (Klasse B): Die Kosten setzen sich aus 32 Theoriestunden, 18 Fahrstunden à 78€, sowie Gebühren für Prüfungen und Materialien zusammen. Für eine genaue Kostenaufstellung kontaktieren Sie uns bitte direkt.
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingThree">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    <strong>Wie lange dauert die Ausbildung im Durchschnitt?</strong>
+                </button>
+            </h2>
+            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                    Die Ausbildung umfasst 32 Theoriestunden und 18 Fahrstunden. Die Gesamtdauer hängt von der Verfügbarkeit und der Lerngeschwindigkeit des Fahrschülers ab, kann aber im Durchschnitt etwa 3 bis 6 Monate betragen. Wenn die praktische Prüfung nicht bestanden wird, kann sie ebenfalls nach einer Wartezeit von 14 Tagen wiederholt werden. Es wird empfohlen, in der Zwischenzeit zusätzliche Fahrstunden zu nehmen, um die Fähigkeiten zu verbessern und sich besser auf die nächste Prüfung vorzubereiten.
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingFour">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                    <strong>Was passiert, wenn ich die Theorie- oder Praxisprüfung nicht bestehe?</strong>
+                </button>
+            </h2>
+            <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                    Bei Nichtbestehen der Theorieprüfung kann sie nach einer Wartezeit von 14 Tagen wiederholt werden. Es ist wichtig, die Theorie in dieser Zeit noch einmal gründlich zu lernen und sich auf die Wiederholungsprüfung vorzubereiten.
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingFive">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                    <strong>Welche Theorie- und Praxisstunden sind mindestens erforderlich?</strong>
+                </button>
+            </h2>
+            <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                    Nehmen Sie aktiv an den 32 vorgeschriebenen Theoriestunden teil und achten Sie darauf, den Stoff zu verstehen. Stellen Sie Fragen, wenn etwas unklar ist.
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingSix">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                    <strong>Wie kann ich mich auf die Theorieprüfung vorbereiten?</strong>
+                </button>
+            </h2>
+            <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                    <ol>
+                        <li><b>Lernmaterialien nutzen:</b> Verwenden Sie die von der Fahrschule bereitgestellten Lernmaterialien, Bücher und Online-Ressourcen, um den Stoff zu wiederholen und zu vertiefen.</li>
+                        <li><b>Online-Prüfungssimulationen:</b> Nutzen Sie Online-Plattformen und Apps, die Prüfungssimulationen anbieten. Diese helfen Ihnen, den Fragestil und die Art der Fragen, die in der Prüfung vorkommen können, besser zu verstehen.</li>
+                        <li><b>Lerngruppen bilden:</b> Tauschen Sie sich mit anderen Fahrschülern aus, bilden Sie Lerngruppen und diskutieren Sie gemeinsam über schwierige Themen.</li>
+                        <li><b>Regelmäßig lernen:</b> Planen Sie täglich Zeit für das Lernen ein. Kurze, regelmäßige Lerneinheiten sind effektiver als das Lernen in langen, unregelmäßigen Abständen.</li>
+                        <li><b>Schwachstellen identifizieren:</b> Achten Sie darauf, welche Themen Ihnen schwerfallen, und konzentrieren Sie sich besonders auf diese Bereiche.</li>
+                        <li><b>Ruhe bewahren:</b> Versuchen Sie, vor der Prüfung ausreichend zu schlafen und gehen Sie entspannt in die Prüfung. Stress und Panik können Ihre Leistung beeinträchtigen.</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingSeven">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+                    <strong>Wie werden die Fahrstunden organisiert?</strong>
+                </button>
+            </h2>
+            <div id="collapseSeven" class="accordion-collapse collapse" aria-labelledby="headingSeven" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                    Die 18 Fahrstunden werden in Absprache mit der Fahrschule geplant. Sie können Termine wählen, die Ihrem Zeitplan entsprechen. Die Fahrstunden sind so strukturiert, dass Sie schrittweise alle notwendigen Fähigkeiten erlernen, von den Grundlagen bis hin zu komplexeren Fahrsituationen. Es wird empfohlen, die Fahrstunden gleichmäßig über die Ausbildungszeit zu verteilen, um kontinuierliches Lernen und Verbesserung zu gewährleisten.
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingEight">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+                    <strong>Kann ich wählen, in welchem Fahrzeug ich lerne?</strong>
+                </button>
+            </h2>
+            <div id="collapseEight" class="accordion-collapse collapse" aria-labelledby="headingEight" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                    In der Regel bietet die Fahrschule verschiedene Fahrzeuge an. Sie können häufig wählen, ob Sie auf einem Schalt- oder Automatikfahrzeug lernen möchten. Die Verfügbarkeit spezifischer Fahrzeugmodelle kann variieren. Es ist am besten, Ihre Präferenzen frühzeitig mit der Fahrschule zu besprechen.
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingNine">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseNine" aria-expanded="false" aria-controls="collapseNine">
+                    <strong>Gibt es einen Intensivkurs und welche Vorteile bietet dieser?</strong>
+                </button>
+            </h2>
+            <div id="collapseNine" class="accordion-collapse collapse" aria-labelledby="headingNine" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                    Einige Fahrschulen bieten Intensivkurse an, bei denen die Theorie- und Praxisstunden innerhalb eines kürzeren Zeitraums absolviert werden. Vorteile eines Intensivkurses sind unter anderem die schnellere Absolvierung der Ausbildung und die Möglichkeit, sich in einem kompakten Zeitraum intensiv auf die Führerscheinprüfung vorzubereiten. Intensivkurse eignen sich besonders für Personen, die schnell ihren Führerschein erwerben möchten und die nötige Zeit und Konzentration für eine intensive Lernphase aufbringen können.
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingTen">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTen" aria-expanded="false" aria-controls="collapseTen">
+                    <strong>Was muss ich am Tag der Prüfung beachten?</strong>
+                </button>
+            </h2>
+            <div id="collapseTen" class="accordion-collapse collapse" aria-labelledby="headingTen" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                    Am Tag der Prüfung sollten Sie ausgeruht und konzentriert sein. Stellen Sie sicher, dass Sie eine gute Nachtruhe hatten. Bringen Sie alle notwendigen Dokumente mit, wie z.B. Ihren Personalausweis und die Anmeldebestätigung. Kommen Sie rechtzeitig zum Prüfungsort, um Hektik zu vermeiden und sich gegebenenfalls noch mit Ihrem Fahrlehrer abzustimmen. Vor der praktischen Prüfung ist es oft möglich, eine kurze Auffrischungsfahrt zu machen, um sich zu beruhigen und anzupassen. Bleiben Sie während der Prüfung ruhig und konzentriert. Fehler können passieren, wichtig ist, ruhig zu bleiben und korrigierend einzugreifen.
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
-<h3>Welche Unterlagen ben&ouml;tige ich f&uuml;r die Anmeldung zum F&uuml;hrerschein?</h3>
-Zu Anmeldung ben&ouml;tigen Sie: Personalausweis, Erste-Hilfe-Kurs-Bescheinigung, 2 EU-Passbilder, (Brillentr&auml;ger: eine Sehtestbescheinigung)
-
-<h3>Wie viel kostet der F&uuml;hrerschein insgesamt?</h3>
-Auto F&uuml;hrerschein (Kla&szlig;e B): Die Kosten setzen sich aus 32 Theoriestunden, 18 Fahrstunden à 78€, sowie Geb&uuml;hren f&uuml;r Pr&uuml;fungen und Materialien zusammen. F&uuml;r eine genaue Kostenaufstellung kontaktieren Sie uns bitte direkt.
-
-<h3>Wie lange dauert die Ausbildung im Durchschnitt?</h3>
-Die Ausbildung umfa&szlig;t 32 Theoriestunden und 18 Fahrstunden. Die Gesamtdauer h&auml;ngt von der Verf&uuml;gbarkeit und der Lerngeschwindigkeit des Fahrsch&uuml;lers ab, kann aber im Durchschnitt etwa 3 bis 6 Monate betragen. Wenn die praktische Pr&uuml;fung nicht bestanden wird, kann sie ebenfalls nach einer Wartezeit von 14 Tagen wiederholt werden. Es wird empfohlen, in der Zwischenzeit zus&auml;tzliche Fahrstunden zu nehmen, um die F&auml;higkeiten zu verbe&szlig;ern und sich be&szlig;er auf die n&auml;chste Pr&uuml;fung vorzubereiten.
-
-<h3>Was passiert, wenn ich die Theorie- oder Praxispr&uuml;fung nicht bestehe?</h3>
-Bei Nichtbestehen der Theoriepr&uuml;fung kann sie nach einer Wartezeit von 14 Tagen wiederholt werden. Es ist wichtig, die Theorie in dieser Zeit noch einmal gr&uuml;ndlich zu lernen und sich auf die Wiederholungspr&uuml;fung vorzubereiten.
-
-<h3>Welche Theorie- und Praxisstunden sind mindestens erforderlich?</h3>
-Nehmen Sie aktiv an den 32 vorgeschriebenen Theoriestunden teil und achten Sie darauf, den Stoff zu verstehen. Stellen Sie Fragen, wenn etwas unklar ist.
-
-<h3> Wie kann ich mich auf die Theoriepr&uuml;fung vorbereiten?</h3>
-
-<ol>
-    <li><b>Lernmaterialien nutzen:</b> Verwenden Sie die von der Fahrschule bereitgestellten Lernmaterialien, B&uuml;cher und Online-Re&szlig;ourcen, um den Stoff zu wiederholen und zu vertiefen.
-    </li>
-    <li><b>Online-Pr&uuml;fung&szlig;imulationen:</b> Nutzen Sie Online-Plattformen und Apps, die Pr&uuml;fung&szlig;imulationen anbieten. Diese helfen Ihnen, den Fragestil und die Art der Fragen, die in der Pr&uuml;fung vorkommen k&ouml;nnen, be&szlig;er zu verstehen.
-    </li>
-    <li><b>erngruppen bilden:</b> Tauschen Sie sich mit anderen Fahrsch&uuml;lern aus, bilden Sie Lerngruppen und diskutieren Sie gemeinsam &uuml;ber schwierige Themen.
-    </li>
-    <li><b>Regelm&auml;&szlig;ig lernen:</b> Planen Sie t&auml;glich Zeit f&uuml;r das Lernen ein. Kurze, regelm&auml;&szlig;ige Lerneinheiten sind effektiver als das Lernen in langen, unregelm&auml;&szlig;igen Abst&auml;nden.
-    </li>
-    <li><b>Schwachstellen identifizieren:</b> Achten Sie darauf, welche Themen Ihnen schwerfallen, und konzentrieren Sie sich besonders auf diese Bereiche.
-    </li>
-    <li><b>Ruhe bewahren:</b> Versuchen Sie, vor der Pr&uuml;fung ausreichend zu schlafen und gehen Sie entspannt in die Pr&uuml;fung. Stre&szlig; und Panik k&ouml;nnen Ihre Leistung beeintr&auml;chtigen.
-    </li>
-</ol>
-
-<h3>Wie werden die Fahrstunden organisiert?</h3>
-Die 18 Fahrstunden werden in Absprache mit der Fahrschule geplant. Sie k&ouml;nnen Termine w&auml;hlen, die Ihrem Zeitplan entsprechen.
-Die Fahrstunden sind so strukturiert, da&szlig; Sie schrittweise alle notwendigen F&auml;higkeiten erlernen, von den Grundlagen bis hin zu komplexeren Fahrsituationen.
-Es wird empfohlen, die Fahrstunden gleichm&auml;&szlig;ig &uuml;ber die Ausbildungszeit zu verteilen, um kontinuierliches Lernen und Verbe&szlig;erung zu gew&auml;hrleisten.
-
-<h3>Kann ich w&auml;hlen, in welchem Fahrzeug ich lerne?</h3>
-In der Regel bietet die Fahrschule verschiedene Fahrzeuge an. Sie k&ouml;nnen h&auml;ufig w&auml;hlen, ob Sie auf einem Schalt- oder Automatikfahrzeug lernen m&ouml;chten.
-Die Verf&uuml;gbarkeit spezifischer Fahrzeugmodelle kann variieren. Es ist am besten, Ihre Pr&auml;ferenzen fr&uuml;hzeitig mit der Fahrschule zu besprechen.
-
-<h3>Gibt es einen Intensivkurs und welche Vorteile bietet dieser?</h3>
-Einige Fahrschulen bieten Intensivkurse an, bei denen die Theorie- und Praxi&szlig;tunden innerhalb eines k&uuml;rzeren Zeitraums absolviert werden.
-Vorteile eines Intensivkurses sind unter anderem die schnellere Absolvierung der Ausbildung und die M&ouml;glichkeit, sich in einem kompakten Zeitraum intensiv auf die F&uuml;hrerscheinpr&uuml;fung vorzubereiten.
-Intensivkurse eignen sich besonders f&uuml;r Personen, die schnell ihren F&uuml;hrerschein erwerben m&ouml;chten und die n&ouml;tige Zeit und Konzentration f&uuml;r eine intensive Lernphase aufbringen k&ouml;nnen.
-
-<h3>Was muss ich am Tag der Pr&uuml;fung beachten?</h3>
-Tag der Pr&uuml;fung:
-Am Tag der Pr&uuml;fung sollten Sie ausgeruht und konzentriert sein. Stellen Sie sicher, da&szlig; Sie eine gute Nachtruhe hatten.
-Bringen Sie alle notwendigen Dokumente mit, wie z.B. Ihren Personalausweis und die Anmeldebest&auml;tigung.
-Kommen Sie rechtzeitig zum Pr&uuml;fungsort, um Hektik zu vermeiden und sich gegebenenfalls noch mit Ihrem Fahrlehrer abzustimmen.
-Vor der praktischen Pr&uuml;fung ist es oft m&ouml;glich, eine kurze Auffrischungsfahrt zu machen, um sich zu beruhigen und anzupa&szlig;en.
-Bleiben Sie w&auml;hrend der Pr&uuml;fung ruhig und konzentriert. Fehler k&ouml;nnen pa&szlig;ieren, wichtig ist, ruhig zu bleiben und korrigierend einzugreifen.
-<br><br>
-F&uuml;r spezifische Details oder individuelle Anpa&szlig;ungen der Fahrstunden und weitere Fragen empfehlen wir, direkt mit der Fahrschule in Kontakt zu treten.
-
-
-
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
