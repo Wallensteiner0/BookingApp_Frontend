@@ -1,3 +1,4 @@
+var token = ""
 $("#loginBtn").click(function () {
 
     const apiUrl = "http://localhost:8080/api/auth/login"
@@ -7,7 +8,7 @@ $("#loginBtn").click(function () {
     }
 
     if (($("#username").val() !== "") && ($("#password").val() !== "")) {
-        console.log("hello");
+
         $.ajax({
             type: "POST",
             url: apiUrl,
@@ -16,15 +17,21 @@ $("#loginBtn").click(function () {
             dataType: "json",
             success: function(response, status, xhr) {
                 console.log(response);
-                $('#result').val(JSON.stringify(response))
+                $('#result').val(JSON.stringify(response));
                 //token
-                console.log(xhr.getResponseHeader("Authorization"))
+                token = xhr.getResponseHeader("Authorization");
+                console.log(token);
+                localStorage.setItem("token",token);
                 // console.log(localStorage.getItem('bookingCookie'))
                 if (response) {
                     $("#userName").html("Hello " + response.username + "!");
                 } else {
                     console.log("Login failed");
                 }
+            },
+            error: function(xhr, status, error) {
+                console.error('Error during login:', error);
+                $('#result').val('Error during login');
             }
         });
     } else {
