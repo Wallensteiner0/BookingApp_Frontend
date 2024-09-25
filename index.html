@@ -24,35 +24,38 @@
             crossorigin="anonymous"></script>
 
     <script type="text/javascript">
-    $(document).ready(function () {
-        $('#LoginLink').click(function () {
+        $(document).ready(function () {
+            $('#LoginLink').click(function () {
                 $('#div_content').load('./pages/login.html');
             });
-        $('#RegisterLink').click(function () {
-            $('#div_content').load('./pages/registration.html');
-        });
-        $('#ProfileLink').click(function () {
-            $('#div_content').load('./pages/profile.html');
-        });
-        $('#CoursesLink').click(function () {
-            $('#div_content').load('./pages/courses.html');
-        });
-        $('#ContactLink').click(function () {
-            $('#div_content').load('./pages/contact.html');
-        });
-        $('#TeamLink').click(function () {
-            $('#div_content').load('./pages/team.html');
-        });
-        $('#FAQLink').click(function () {
-            $('#div_content').load('./pages/faq.html');
-        });
+            $('#RegisterLink').click(function () {
+                $('#div_content').load('./pages/registration.html');
+            });
+            $('#ProfileLink').click(function () {
+                $('#div_content').load('./pages/profile.html');
+            });
+            $('#EventsLink').click(function () {
+                $('#div_content').load('./pages/events.html');
+            });
+            $('#CoursesLink').click(function () {
+                $('#div_content').load('./pages/courses.html');
+            });
+            $('#ContactLink').click(function () {
+                $('#div_content').load('./pages/contact.html');
+            });
+            $('#TeamLink').click(function () {
+                $('#div_content').load('./pages/team.html');
+            });
+            $('#FAQLink').click(function () {
+                $('#div_content').load('./pages/faq.html');
+            });
 
-        $('#div_footer').load('./pages/footer.html');
-    });
+            $('#div_footer').load('./pages/footer.html');
+        });
     </script>
 </head>
 <body>
-  <div class="background-image">
+<div class="background-image">
     <header>
         <nav class="navbar">
             <ul class="nav-left">
@@ -61,12 +64,13 @@
                     <a href="#">Pages</a>
                     <ul class="dropdown-content">
                         <li><a href="#" id="ProfileLink">Profile</a></li>
-                        <li><a href="#" id="FAQLink">FAQ</a></li>
-                        <li><a href="#" id="CoursesLink">Courses</a></li>
-                        <!-- <li><a href="pages/form.html">Form</a></li> 
-                        <li><a href="pages/imprint.html">Imprint</a></li> -->
-                        <li><a href="#" id="TeamLink">Team</a></li>
-                        <li><a href="#" id="ContactLink">Contact</a></li>
+                        <li><a href="#" id="EventsLink">Events</a></li>
+<!--                        <li><a href="#" id="FAQLink2">FAQ</a></li>
+                        <li><a href="#" id="CoursesLink2">Courses</a></li>
+                        <li><a href="pages/form.html">Form</a></li>
+                        <li><a href="pages/imprint.html">Imprint</a></li>
+                        <li><a href="#" id="TeamLink2">Team</a></li>
+                        <li><a href="#" id="ContactLink2">Contact</a></li> -->
                     </ul>
                 </li>
                 <li><a href="#" id="CoursesLink">Courses</a></li>
@@ -92,6 +96,6 @@
         <div class="bottom" id="div_footer">
         </div>
     </footer>
-  </div>
+</div>
 </body>
 </html>
