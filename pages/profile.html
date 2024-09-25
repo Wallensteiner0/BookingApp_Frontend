@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Profile</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <style>
+        .error {
+            color: #f8c300;
+            font-size: 0.8em;
+            display: none; /* Start hidden and show on error */
+        }
+
+        .container {
+            max-width: 750px;
+            margin-top: 50px;
+        }
+
+        .profile-header {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1 class="profile-header">Profile</h1>
+    <div class="row">
+        <div class="col" id="profile-form">
+            <div class="form-group row">
+                <span id="inputError" class="col-sm-2 col-form-label"></span>
+            </div>
+
+            <div class="form-group row">
+                <label for="username" class="col-sm-2 col-form-label">Username</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="username">
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="email" class="col-sm-2 col-form-label">Email</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="email">
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="gender" class="col-sm-2 col-form-label">Gender</label>
+                <div class="col-sm-10">
+                    <select name="gender" id="gender">
+                        <option value="FEMALE">Female</option>
+                        <option value="MALE">Male</option>
+                        <option value="OTHER">Other</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group row" id="otherDiv" style="visibility: hidden">
+                <label for="other" class="col-sm-2 col-form-label">Other</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="other">
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="country" class="col-sm-2 col-form-label">Country</label>
+                <div class="col-sm-10">
+                    <select name="country" id="country">
+
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- JQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js" crossorigin="anonymous"></script>
+
+<!-- External JavaScript -->
+<script src="../src/js/profile.js" crossorigin="use-credentials"></script>
+</body>
+</html>

@@ -72,6 +72,33 @@
             integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
             crossorigin="anonymous"></script>
 
+    <script type="text/javascript">
+    $(document).ready(function () {
+        $('#LoginLink').click(function () {
+                $('#div_content').load('./pages/login.html');
+            });
+        $('#RegisterLink').click(function () {
+            $('#div_content').load('./pages/registration.html');
+        });
+        $('#ProfileLink').click(function () {
+            $('#div_content').load('./pages/profile.html');
+        });
+        $('#CoursesLink').click(function () {
+            $('#div_content').load('./pages/courses.html');
+        });
+        $('#ContactLink').click(function () {
+            $('#div_content').load('./pages/contact.html');
+        });
+        $('#TeamLink').click(function () {
+            $('#div_content').load('./pages/team.html');
+        });
+        $('#FAQLink').click(function () {
+            $('#div_content').load('./pages/faq.html');
+        });
+
+        $('#div_footer').load('./pages/footer.html');
+    });
+    </script>
 
 </head>
 <body>
@@ -79,47 +106,33 @@
 <!-- Navigationbar -->
 <div class="navbar">
     <div class="container">
-        <a href="#courses">Courses</a>
-        <a href="Test">Test</a>
-        <a href="Contact">Contact</a>
-        <a href="pages/team.html">About us</a>
-        <a href="pages/faq.html">FAQ</a>
-    </div>
-</div>
-
-<!-- Login/Register-Menü -->
-<div class="login-menu">
-    <div class="container">
-        <a href="pages/login.html">Login</a>
-        <a href="pages/form.html">Register</a>
+        <a href="#" id="CoursesLink">Courses</a>
+        <a href="#" id="ProfileLink">Profile</a>
+        <!-- <a href="Test">Test</a> -->
+        <a href="#" id="ContactLink">Contact</a>
+        <a href="#" id="TeamLink">Team</a>
+        <a href="#" id="FAQLink">FAQ</a>
     </div>
 </div>
 
 <!-- Homepage Titel -->
-<div class="container" style="padding: 10%;">
+<div class="container" id="div_content">
+    <div class="row">
+
     <h1>Driving School Booking App</h1>
-    <p>This is a Placeholder</p>
+    </div>
 
-    <!-- Sample for each Section -->
-    <section id="Sample 1">
-        <h2>Sample 1</h2>
-        <p>I'm currently working on it. Please stay tuned!</p>
-    </section>
+    <div class="row">
+        <div class="col">
 
-    <section id="Something">
-        <h2>Something</h2>
-        <p>It could be possible, something is going on here.</p>
-    </section>
-
-    <section id="Maybe a nice Background">
-        <h2>Maybe a nice Background</h2>
-    </section>
+        <a href="#" id="LoginLink">Login</a>
+            </div>
+        <div class="col">
+        <a href="#" id="RegisterLink">Register</a>
+        </div>
+    </div>
 </div>
-<div class="bottom">
-    <footer>
-        <!-- Impressum-Link -->
-        <a href="impressum.html">Impressum</a>
-    </footer>
+<div class="bottom" id="div_footer">
 </div>
 
 
