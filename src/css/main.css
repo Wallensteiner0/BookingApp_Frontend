@@ -154,3 +154,19 @@ footer a:hover {
         margin: 5px 0;
     }
 }
+
+.image-container {
+    text-align: center;
+    height: auto;
+}
+
+.image-container img {
+    width: 100%;
+    height: auto;
+    max-height: 300px;
+    max-width: 100px;
+}
+
+.gallery {
+    margin: 20px auto; /* Center the gallery */
+}
