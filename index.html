@@ -25,6 +25,8 @@
 
     <script type="text/javascript">
         $(document).ready(function () {
+            $('#div_content').load('./pages/home.html');
+
             $('#LoginLink').click(function () {
                 $('#div_content').load('./pages/login.html');
             });
@@ -54,48 +56,41 @@
         });
     </script>
 </head>
+
 <body>
-<div class="background-image">
-    <header>
-        <nav class="navbar">
-            <ul class="nav-left">
-                <li><a href="index.html">Home</a></li>
-                <li class="dropdown">
-                    <a href="#">Pages</a>
-                    <ul class="dropdown-content">
-                        <li><a href="#" id="ProfileLink">Profile</a></li>
-                        <li><a href="#" id="EventsLink">Events</a></li>
-<!--                        <li><a href="#" id="FAQLink2">FAQ</a></li>
-                        <li><a href="#" id="CoursesLink2">Courses</a></li>
-                        <li><a href="pages/form.html">Form</a></li>
-                        <li><a href="pages/imprint.html">Imprint</a></li>
-                        <li><a href="#" id="TeamLink2">Team</a></li>
-                        <li><a href="#" id="ContactLink2">Contact</a></li> -->
-                    </ul>
-                </li>
-                <li><a href="#" id="CoursesLink">Courses</a></li>
-                <li><a href="#" id="ContactLink">Contact</a></li>
-                <li><a href="#" id="TeamLink">Team</a></li>
-                <li><a href="#" id="FAQLink">FAQ</a></li>
-                <li style="margin-left: auto;"><a href="#" id="LoginLink">Login</a></li>
-                <li><a href="#" id="RegisterLink">Register</a></li>
-            </ul>
-        </nav>
-    </header>
+<header>
+    <nav class="navbar">
+        <ul class="nav-left">
+            <li><a href="index.html">Home</a></li>
+            <li class="dropdown">
+                <a href="#">Pages</a>
+                <ul class="dropdown-content">
+                    <li><a href="#" id="ProfileLink">Profile</a></li>
+                    <li><a href="#" id="EventsLink">Events</a></li>
+                    <!--                        <li><a href="#" id="FAQLink2">FAQ</a></li>
+                                            <li><a href="#" id="CoursesLink2">Courses</a></li>
+                                            <li><a href="pages/form.html">Form</a></li>
+                                            <li><a href="pages/imprint.html">Imprint</a></li>
+                                            <li><a href="#" id="TeamLink2">Team</a></li>
+                                            <li><a href="#" id="ContactLink2">Contact</a></li> -->
+                </ul>
+            </li>
+            <li><a href="#" id="CoursesLink">Courses</a></li>
+            <li><a href="#" id="ContactLink">Contact</a></li>
+            <li><a href="#" id="TeamLink">Team</a></li>
+            <li><a href="#" id="FAQLink">FAQ</a></li>
+            <li style="margin-left: auto;"><a href="#" id="LoginLink">Login</a></li>
+            <li><a href="#" id="RegisterLink">Register</a></li>
+        </ul>
+    </nav>
+</header>
 
-    <main>
-        <div class="main" id="div_content">
-            <h1 class="color-change">Driving school community</h1>
-        </div>
+<main>
+    <div class="align-content-center" id="div_content"></div>
+</main>
 
-    </main>
-
-    <h2>Learn to drive <br>easily and comfortably</h2>
-
-    <footer>
-        <div class="bottom" id="div_footer">
-        </div>
-    </footer>
-</div>
+<footer>
+    <div class="bottom" id="div_footer"></div>
+</footer>
 </body>
 </html>
