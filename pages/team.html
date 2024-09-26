@@ -6,8 +6,11 @@
     <title>Team</title>
     <style>
         img {
-            width: 10%;
-            height: auto;
+            width: auto; /* Setzt die Bildbreite auf 50% der Breite des umgebenden Elements */
+            height: 100px; /* Erhält das Seitenverhältnis des Bildes */
+            border-radius: 50%;   /* Macht die Ecken rund und erstellt einen Kreis */
+            overflow: hidden;     /* Überschüssiges Bild abschneiden */
+            object-fit: cover;    /* Das Bild so zuschneiden, dass es den Kreis füllt */
         }
     </style>
 </head>
@@ -15,18 +18,6 @@
 <div class="container">
     <h1 class="main">Team</h1>
     <h2>Members:</h2>
-    <!--        <ul>
-                <li>
-                    Zuzka Glaess
-                </li>
-                <li>
-                    Gerhard Meyer
-                </li>
-                <li>
-                    Andreas Wallensteiner (<a href="https://www.linkedin.com/in/wallensteiner0/">LinkedIn</a>)
-                </li>
-            </ul> -->
-
     <figure>
         <img src="../src/images/team_zuzka.jpg" alt="Zuzka Glaess">
         <figcaption>Zuzka Glaess</figcaption>
