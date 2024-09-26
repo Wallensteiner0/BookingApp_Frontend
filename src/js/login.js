@@ -24,6 +24,7 @@ $("#loginBtn").click(function () {
                 localStorage.setItem("token",token);
                 // console.log(localStorage.getItem('bookingCookie'))
                 if (response) {
+                    localStorage.setItem("userRoles",response.roles);
                     $("#userName").html("Hello " + response.username + "!");
                 } else {
                     console.log("Login failed");
