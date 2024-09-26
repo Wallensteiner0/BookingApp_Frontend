@@ -6,38 +6,28 @@
     <title>Team</title>
     <style>
         img {
-            width: 10%;
-            height: auto;
+            width: auto;            /* Setzt die Bildbreite auf 50% der Breite des umgebenden Elements */
+            height: 100px;          /* Erhält das Seitenverhältnis des Bildes */
+            border-radius: 50%;     /* Macht die Ecken rund und erstellt einen Kreis */
+            overflow: hidden;       /* Überschüssiges Bild abschneiden */
+            object-fit: cover;      /* Das Bild so zuschneiden, dass es den Kreis füllt */
         }
     </style>
 </head>
 <body>
 <div class="container">
-    <h1 class="main">Team</h1>
-    <h2>Members:</h2>
-    <!--        <ul>
-                <li>
-                    Zuzka Glaess
-                </li>
-                <li>
-                    Gerhard Meyer
-                </li>
-                <li>
-                    Andreas Wallensteiner (<a href="https://www.linkedin.com/in/wallensteiner0/">LinkedIn</a>)
-                </li>
-            </ul> -->
-
+    <h1 class="color-change">Team Members</h1>
     <figure>
         <img src="../src/images/team_zuzka.jpg" alt="Zuzka Glaess">
-        <figcaption>Zuzka Glaess</figcaption>
+        <figcaption>Zuzka Glaess<br><small>(CEO)</small></figcaption>
     </figure>
     <figure>
         <img src="../src/images/team_gerhard.jpg" alt="Gerhard Meyer">
-        <figcaption>Gerhard Meyer</figcaption>
+        <figcaption>Gerhard Meyer<br><small>(Head of Office)</small></figcaption>
     </figure>
     <figure>
         <img src="../src/images/team_andreas.jpg" alt="Andreas Wallensteiner">
-        <figcaption>Andreas Wallensteiner</figcaption>
+        <figcaption>Andreas Wallensteiner<br><small>Driving Instructor (AM, A, B, BE)</small></figcaption>
     </figure>
 </div>
 </body>
