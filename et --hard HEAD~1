@@ -1,0 +1,223 @@
+[33mcommit 6b9f05682a87c0d7169e9b6e916552cc50f9c5b9[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mteam[m[33m, [m[1;31morigin/team[m[33m)[m
+Author: Andreas Wallensteiner <wallensteiner0@gmail.com>
+Date:   Sat Oct 5 16:01:54 2024 +0200
+
+    39 net team pictures next to each other
+
+[33mcommit 2124f629a581de9ac9b8179f4b77dad0112f4e03[m
+Author: Andreas Wallensteiner <wallensteiner0@gmail.com>
+Date:   Thu Sep 26 15:35:02 2024 +0200
+
+    2.try_update eye-candy team-pictures
+
+[33mcommit d67fab7c597c166ccd1d52e84c20946f02044831[m
+Author: Andreas Wallensteiner <wallensteiner0@gmail.com>
+Date:   Thu Sep 26 13:38:59 2024 +0200
+
+    adjusted team-pictures
+
+[33mcommit cfd8d25d13fe83dc4a93ed1ce625793d70f2aff4[m
+Merge: 354bb3e 6c7ed07
+Author: Zuzka Gläss <150141008+ZuzkaGlaess@users.noreply.github.com>
+Date:   Thu Sep 26 13:25:33 2024 +0200
+
+    Merge pull request #20 from Wallensteiner0/19-contact-details
+    
+    contact details updated
+
+[33mcommit 6c7ed07459a2df3fb2bc43899cb044a84ed35fd0[m
+Author: ZuzkaGlaess <zuzka.glaess@gmail.com>
+Date:   Thu Sep 26 13:25:00 2024 +0200
+
+    contact details updated
+
+[33mcommit 354bb3e337277fede7b571638493ceca1bd359b1[m
+Author: ZuzkaGlaess <zuzka.glaess@gmail.com>
+Date:   Thu Sep 26 13:07:37 2024 +0200
+
+    footer adjustments
+
+[33mcommit d0e20e83e97c0ede1c515dce354fdf3079d7a35f[m
+Author: ZuzkaGlaess <zuzka.glaess@gmail.com>
+Date:   Thu Sep 26 11:41:18 2024 +0200
+
+    homepage integrated, styles adapted
+
+[33mcommit 3b5e58fd6863a13ef2b9647f49934d33048d2d9e[m
+Author: ZuzkaGlaess <zuzka.glaess@gmail.com>
+Date:   Wed Sep 25 21:33:43 2024 +0200
+
+    bug fixing navigation, reducing pages, added events list, added placeholder for user list
+
+[33mcommit ab7bfea137354e34e87836bbbd7fa3b750f2f5aa[m
+Merge: e6bd78e c59c350
+Author: Zuzka Gläss <150141008+ZuzkaGlaess@users.noreply.github.com>
+Date:   Wed Sep 25 19:34:54 2024 +0200
+
+    Merge pull request #18 from Wallensteiner0/pages
+    
+    fixed all hrefs, added background, pages and more
+
+[33mcommit c59c350643615036689b53c2c98e3f45082dd319[m[33m ([m[1;31morigin/pages[m[33m)[m
+Merge: 0d62dc7 e6bd78e
+Author: Zuzka Gläss <150141008+ZuzkaGlaess@users.noreply.github.com>
+Date:   Wed Sep 25 19:34:43 2024 +0200
+
+    Merge branch 'main' into pages
+
+[33mcommit 0d62dc7c086eeaf34a47a516ca51cd0cd941352d[m
+Author: Gerhard <ww23e010@technikum-wien.at>
+Date:   Tue Sep 24 20:56:32 2024 +0200
+
+    i am done today :D
+
+[33mcommit 6e68cc91e0fb85c2e4851817452556de3233e517[m
+Author: Gerhard <ww23e010@technikum-wien.at>
+Date:   Tue Sep 24 19:41:28 2024 +0200
+
+    fixed all hrefs, added background, pages and more
+
+[33mcommit e6bd78e5ace90d5c28dcb3bab1fd1aa197f86d7e[m
+Author: ZuzkaGlaess <zuzka.glaess@gmail.com>
+Date:   Sun Sep 22 13:22:03 2024 +0200
+
+    Removed unnecessary part of login page
+
+[33mcommit 45d5a9f55b9a1e1dc782c7390d39da38bff3f4c8[m
+Merge: 521217b 316de6e
+Author: Zuzka Gläss <150141008+ZuzkaGlaess@users.noreply.github.com>
+Date:   Sun Sep 22 13:17:42 2024 +0200
+
+    Merge pull request #17 from Wallensteiner0/4-profile-page
+    
+    Fixed login to get to profile
+
+[33mcommit 316de6e4e1a67fa8e17c1f8c182cafc01fc73049[m[33m ([m[1;31morigin/4-profile-page[m[33m)[m
+Author: ZuzkaGlaess <zuzka.glaess@gmail.com>
+Date:   Sun Sep 22 13:16:44 2024 +0200
+
+    Fixed login to get to profile
+    Added profile
+    Changed page structure to visualize subpages in container
+
+[33mcommit 521217b5e162c473a031e63ffa7a4f5a7c2e6def[m[33m ([m[1;31morigin/index_v.1.0[m[33m)[m
+Merge: 09f6173 648677b
+Author: Zuzka Gläss <150141008+ZuzkaGlaess@users.noreply.github.com>
+Date:   Mon Sep 9 19:21:17 2024 +0200
+
+    Merge pull request #16 from Wallensteiner0/15-change-folder-structure-to-best-practices
+    
+    Restructured project to folder structure according to best practices
+
+[33mcommit 648677b45c5e7f64e9833832e46465096074d2de[m[33m ([m[1;31morigin/15-change-folder-structure-to-best-practices[m[33m)[m
+Author: ZuzkaGlaess <zuzka.glaess@gmail.com>
+Date:   Mon Sep 9 19:14:50 2024 +0200
+
+    Restructured project to folder structure according to best practices
+
+[33mcommit 09f617302fc55a2f4d07a99e71c7a510f1a3ab30[m
+Merge: f1c1af6 3f13208
+Author: Andreas Wallensteiner <52046300+Wallensteiner0@users.noreply.github.com>
+Date:   Fri Aug 30 11:36:44 2024 +0200
+
+    Merge pull request #14 from Wallensteiner0/faq
+    
+    addes bootstrap and klickable cards for the questions
+
+[33mcommit 3f13208886519f2541abef20f80bc1fde45fb195[m[33m ([m[1;31morigin/faq[m[33m)[m
+Author: Andreas Wallensteiner <wallensteiner0@gmail.com>
+Date:   Fri Aug 30 11:25:37 2024 +0200
+
+    addes bootstrap and klickable cards for the questions
+
+[33mcommit f1c1af63953987a74744334e50ce1ef1efb03759[m
+Merge: e15f224 34103ed
+Author: Zuzka Gläss <150141008+ZuzkaGlaess@users.noreply.github.com>
+Date:   Sun Jul 28 19:28:17 2024 +0200
+
+    Merge pull request #13 from Wallensteiner0/3-registration
+    
+    3 registration
+
+[33mcommit e15f2246760a60cd6f2366604c5a618ef2f5ee53[m
+Merge: 5bf4d0b 96c4227
+Author: Zuzka Gläss <150141008+ZuzkaGlaess@users.noreply.github.com>
+Date:   Sun Jul 28 19:27:12 2024 +0200
+
+    Merge pull request #12 from Wallensteiner0/5-log-in-with-username-or-email-address-and-password
+    
+    Fixed login page with jquery
+
+[33mcommit 34103ed80bc22be6833353a5f7752e69fc6c152b[m[33m ([m[1;31morigin/3-registration[m[33m)[m
+Author: ZuzkaGlaess <zuzka.glaess@gmail.com>
+Date:   Sun Jul 28 19:25:22 2024 +0200
+
+    Added Registration jQuery
+    Fixed Gender visibility "other" field
+
+[33mcommit 73d5707a4616f93a2e5129d1207441237cbf1e43[m
+Author: ZuzkaGlaess <zuzka.glaess@gmail.com>
+Date:   Sun Jul 28 14:04:43 2024 +0200
+
+    Added registration page and country jQuery
+
+[33mcommit 96c4227f1c330e053ac71c4f23f6c227fa0ad9a4[m[33m ([m[1;31morigin/5-log-in-with-username-or-email-address-and-password[m[33m)[m
+Author: ZuzkaGlaess <zuzka.glaess@gmail.com>
+Date:   Sun Jul 28 12:46:37 2024 +0200
+
+    Fixed login page with jquery
+
+[33mcommit 5bf4d0b66d80388fd5ad7104801954dea668e74e[m[33m ([m[1;31morigin/unregistered-user-get-basic-information[m[33m, [m[1;31morigin/8-countries-to-complete[m[33m)[m
+Merge: 7cd4361 c4a9388
+Author: Andreas Wallensteiner <52046300+Wallensteiner0@users.noreply.github.com>
+Date:   Fri May 17 10:57:08 2024 +0200
+
+    Merge pull request #10 from Wallensteiner0/form
+    
+    updated the sites: form - faq - logIn - registerComplete (and renamed…
+
+[33mcommit c4a93888cc247662815bac986b3d5d923d201d68[m[33m ([m[1;31morigin/form[m[33m)[m
+Author: Andreas Wallensteiner <wallensteiner0@gmail.com>
+Date:   Fri May 17 10:51:38 2024 +0200
+
+    updated the sites: form - faq - logIn - registerComplete (and renamed old: complete) - added folder *js* containing all js-files of the site
+
+[33mcommit 7cd43617e4578e53e49b46a8402efca550957d1c[m
+Merge: b1af4bf 1613d69
+Author: Andreas Wallensteiner <52046300+Wallensteiner0@users.noreply.github.com>
+Date:   Fri Mar 8 09:16:04 2024 +0100
+
+    Merge pull request #1 from Wallensteiner0/form
+    
+    added Bootstrap links
+
+[33mcommit 1613d6946ce2b97686555b02e25204cd7cbfb6fc[m
+Author: Andreas Wallensteiner <wallensteiner0@gmail.com>
+Date:   Fri Mar 8 09:11:30 2024 +0100
+
+    added Bootstrap links
+
+[33mcommit b1af4bfc4ddd27a4abd07265b651a52f85d7adaf[m
+Author: Gerhard <ww23e010@technikum-wien.at>
+Date:   Fri Feb 23 10:16:00 2024 +0100
+
+    Zeile 16 - 24 sind die einzelnen Maillinks hinzugefügt
+
+[33mcommit 5d0c74ae7fbfb385704ac47c2f51adff385578a2[m
+Author: Andreas Wallensteiner <52046300+Wallensteiner0@users.noreply.github.com>
+Date:   Fri Feb 9 10:09:33 2024 +0100
+
+    added gitignore
+    for html & css
+
+[33mcommit 4b76f0e30e32ff00a43a7201d4be3da23e9e7172[m
+Author: Andreas Wallensteiner <52046300+Wallensteiner0@users.noreply.github.com>
+Date:   Wed Feb 7 12:43:39 2024 +0100
+
+    new Project created, please now fork the project
+
+[33mcommit 0dac1c977dd9fe56306fda63298cac32d656cab2[m
+Author: Andreas Wallensteiner <52046300+Wallensteiner0@users.noreply.github.com>
+Date:   Wed Feb 7 12:33:10 2024 +0100
+
+    Initial commit
