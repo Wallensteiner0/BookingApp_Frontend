@@ -12,24 +12,41 @@
             overflow: hidden;       /* Überschüssiges Bild abschneiden */
             object-fit: cover;      /* Das Bild so zuschneiden, dass es den Kreis füllt */
         }
+        div.container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            background-color: rgba(170, 170, 164, 0.42);
+        }
+        div.container div {
+            width:30%;
+        }
     </style>
 </head>
 <body>
+
+<h1 class="main">Team</h1>
+<h2>Members:</h2>
+
 <div class="container">
-    <h1 class="main">Team</h1>
-    <h2>Members:</h2>
-    <figure>
+
+    <div><figure>
         <img src="../src/images/team_zuzka.jpg" alt="Zuzka Glaess">
         <figcaption>Zuzka Glaess<br><small>(CEO)</small></figcaption>
-    </figure>
-    <figure>
+    </figure></div>
+
+    <div><figure>
         <img src="../src/images/team_gerhard.jpg" alt="Gerhard Meyer">
         <figcaption>Gerhard Meyer<br><small>(Head of Office)</small></figcaption>
-    </figure>
-    <figure>
+    </figure></div>
+
+    <div><figure>
         <img src="../src/images/team_andreas.jpg" alt="Andreas Wallensteiner">
         <figcaption>Andreas Wallensteiner<br><small>Driving Instructor (AM, A, B, BE)</small></figcaption>
-    </figure>
+    </figure></div>
+
 </div>
+
 </body>
 </html>
