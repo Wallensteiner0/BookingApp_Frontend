@@ -47,15 +47,6 @@ body.home-page {
     text-align: center; /* Center text on home page */
 }
 
-/*.home {*/
-/*    height: 100vh; !* 100% of the viewport height *!*/
-/*    display: flex;*/
-/*    justify-content: center;*/
-/*    align-items: center;*/
-/*    text-align: center; !* Center text horizontally *!*/
-/*    flex-direction: column; !* Stack h1 and h2 vertically *!*/
-/*}*/
-
 /* Home page specific styles */
 .home {
     min-height: auto; /* Minimum height is 100% of the viewport, but can shrink if content is less */
@@ -73,10 +64,6 @@ body.home-page {
     width: 85%;
     margin: 0 auto; /* Center the container */
 }
-
-/*.home .container {*/
-/*    text-align: center; !* Center text inside container for home page *!*/
-/*}*/
 
 body.home-page {
     margin: 0;
@@ -182,7 +169,7 @@ main {
 /* Mouse-Over Color change */
 .color-change:hover {
     transition: 0.8s ease;
-    color: lightskyblue;
+    color: #2769c9;
 }
 
 /* Footer */
@@ -200,8 +187,8 @@ footer a {
     text-decoration: none;
 }
 
-footer a:hover {
-    text-decoration: underline;
+#LinkImpressum:hover {
+    color: #2abe02 !important;
 }
 
 /* Responsives Design */
