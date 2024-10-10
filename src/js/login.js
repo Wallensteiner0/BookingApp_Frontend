@@ -20,8 +20,14 @@ $("#loginBtn").click(function () {
                 $('#result').val(JSON.stringify(response));
                 //token
                 token = xhr.getResponseHeader("Authorization");
-                console.log(token);
-                localStorage.setItem("token",token);
+
+                if (token) {
+                    // Remove the "Bearer " prefix (first 7 characters)
+                    token = token.substring(7);
+                    console.log(token);
+                    localStorage.setItem("token", token);
+                }
+
                 // console.log(localStorage.getItem('bookingCookie'))
                 if (response) {
                     localStorage.setItem("userRoles",response.roles);
