@@ -3,11 +3,150 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Courses</title>
+    <title>Driving School Courses</title>
+    <link rel="stylesheet" href="../src/css/courses.css">
+
+<!--    <script type="text/javascript">-->
+<!--        $(document).ready(function () {-->
+<!--            $('#RegisterLink').click(function () {-->
+<!--                $('#div_content').load('./pages/registration.html');-->
+<!--            });-->
+
+<!--    </script>-->
+
 </head>
 <body>
+
+<section class="hero">
+    <img src="../src/images/bg_05.jpg" alt="Driving on the road">
+    <div class="hero-text">
+        <h2>Start your journey to freedom now!</h2>
+        <a href="../pages/registration.html" class="btn">Register here</a>
+<!--        <a href="#" id="RegisterLink">Register</a>-->
+    </div>
+</section>
+
 <div class="container">
-    <h1 class="color-change">Our Courses upskill you<br>with driving training</h1>
+    <h1>Our Courses Will Upskill You<br>With Professional Driving Training</h1>
+    <p>Since 1938, we have assisted our students in achieving their driving goals. Combining traditional values with modern methods, we have become one of the leading driving schools in Austria. With 86 years of experience across three generations, our professional, reliable, and friendly instructors will make learning to drive as smooth as possible and help you feel confident behind the wheel. We look forward to accompanying you on your driving journey and are always available to answer your questions!</p>
 </div>
+
+<section id="courses" class="courses container">
+    <h3>Available Courses</h3>
+    <p>Click to see Information</p>
+    <ul>
+        <li onclick="toggleCard('motorbike')">A (Motorbike)</li>
+        <li onclick="toggleCard('car')">B (Car)</li>
+        <li onclick="toggleCard('l17')">L17 - Training</li>
+        <li onclick="toggleCard('dual-training')">Dual Training (Private)</li>
+        <li onclick="toggleCard('safety-training')">Safety Driving Training</li>
+        <li onclick="toggleCard('foreign-language')">Foreign Language Training (English)</li>
+        <li onclick="toggleCard('private-lessons')">Private Lessons (Theory / Practice)</li>
+        <li onclick="toggleCard('road-safety')">Road Safety Education</li>
+        <li onclick="toggleCard('code-111')">Code 111 (125ccm)</li>
+        <li onclick="toggleCard('multi-phase')">Multi-Phase Training</li>
+        <li onclick="toggleCard('refresher-course')">Refresher Driving Course</li>
+        <li onclick="toggleCard('first-aid')">First Aid Course</li>
+        <li onclick="toggleCard('follow-up')">Follow-up Training</li>
+        <li onclick="toggleCard('automatic-education')">Automatic Education</li>
+        <li onclick="toggleCard('elderly-check-up')">Elderly Check-up</li>
+        <li onclick="toggleCard('check-up')">Driving Licence Check-up</li>
+    </ul>
+</section>
+
+<div id="motorbike" class="course-card">
+    <h3>A (Motorbike)</h3>
+    <p>Do you wanna feel freedom and the wind in your hair? Check out our new Motorbike Courses starting from March until the end of November. Sorry, otherwise, it’s gonna be too cold to drive safely. Theoretical courses are available all year long!</p>
+</div>
+
+<div id="car" class="course-card">
+    <h3>B (Car)</h3>
+    <p>Get your driving license for cars or motorbikes with our experienced instructors. Our goal is to ensure you are fully prepared for the road.</p>
+</div>
+
+<div id="l17" class="course-card">
+    <h3>B-L17 (Car)</h3>
+    <p>The L17 course provides young drivers an early start with supervised driving practice before their 17th birthday.</p>
+</div>
+
+<div id="dual-training" class="course-card">
+    <h3>Dual Training (Private)</h3>
+    <p>Take advantage of dual training, where you combine practical lessons with private instruction for a well-rounded experience.</p>
+</div>
+
+<div id="safety-training" class="course-card">
+    <h3>Safety Driving Training</h3>
+    <p>Enhance your driving skills by learning advanced safety techniques that help you stay in control under various conditions.</p>
+</div>
+
+<div id="foreign-language" class="course-card">
+    <h3>Foreign Language Training (English)</h3>
+    <p>We offer driving lessons in English for those who prefer instruction in a foreign language to make learning easier.</p>
+</div>
+
+<div id="private-lessons" class="course-card">
+    <h3>Private Lessons (Theory / Practice)</h3>
+    <p>Get one-on-one private lessons in both theory and practice to accelerate your progress and focus on specific areas.</p>
+</div>
+
+<div id="road-safety" class="course-card">
+    <h3>Road Safety Education</h3>
+    <p>Our road safety education program is designed to teach essential safety principles for drivers of all levels.</p>
+</div>
+
+<div id="code-111" class="course-card">
+    <h3>Code 111 (125ccm)</h3>
+    <p>This course allows you to legally drive 125cc motorbikes with your car license under specific conditions.</p>
+</div>
+
+<div id="multi-phase" class="course-card">
+    <h3>Multi-Phase Training</h3>
+    <p>Our multi-phase training provides a comprehensive approach to driving, offering several phases of training for enhanced learning.</p>
+</div>
+
+<div id="refresher-course" class="course-card">
+    <h3>Refresher Driving Course</h3>
+    <p>For those who haven't driven in a while, our refresher driving course will get you back on the road with confidence.</p>
+</div>
+
+<div id="first-aid" class="course-card">
+    <h3>First Aid Course</h3>
+    <p>This mandatory first aid course is essential for all drivers to know how to act in case of emergencies on the road.</p>
+</div>
+
+<div id="follow-up" class="course-card">
+    <h3>Follow-up Training</h3>
+    <p>We offer follow-up training to further refine your driving skills after the initial driving lessons have been completed.</p>
+</div>
+
+<div id="automatic-education" class="course-card">
+    <h3>Automatic Education</h3>
+    <p>Learn to drive automatic cars with ease, especially designed for those who prefer automatic over manual transmission.</p>
+</div>
+
+<div id="elderly-check-up" class="course-card">
+    <h3>Elderly Driving Checkup</h3>
+    <p><b>Stay Safe on the Road</b>: Refresh your driving skills and boost your confidence behind the wheel with our tailored course for senior drivers. Designed to update you on the latest traffic rules and safe driving techniques, this course helps ensure you continue to drive safely and comfortably.<br>
+        <img src="../src/images/granny_2.jpg" alt="Elderly on the Road" width=500px" height="auto"> </p>
+</div>
+<div id="check-up" class="course-card">
+    <h3>Driving Licence Check-up</h3>
+    <p>If you are unsure about your driving skills or license status, our driving licence check-up will ensure you are fully prepared for the road.</p>
+</div>
+
+
+<script>
+    function toggleCard(id) {
+        const card = document.getElementById(id);
+        if (card.style.display === "none" || card.style.display === "") {
+            card.style.display = "block";
+            card.scrollIntoView({ behavior: 'smooth' });  // Scrollt zum eingeblendeten Inhalt
+        } else {
+            card.style.display = "none";
+        }
+    }
+
+</script>
+
 </body>
 </html>
