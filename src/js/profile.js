@@ -1,6 +1,6 @@
 function getProfile() {
 
-    const apiUrl = "http://localhost:8080/api/profiles"
+    const apiUrl = "http://localhost:8080/api/profile"
 
     $.ajax({
         type: "GET",

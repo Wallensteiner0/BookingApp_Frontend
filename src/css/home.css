@@ -1,0 +1,28 @@
+button {
+    height: 100px;
+    width: 80%;
+}
+
+#EventsButton {
+    background-color: #007bff; /* Bootstrap Primary Blue */;
+}
+
+#BookingsButton {
+    background-color: #0961d3
+}
+
+#ProfileButton {
+    background-color: #2057a6;
+}
+
+
+
+/* Optional: If you want to change text color */
+button {
+    color: white; /* Make sure text is visible */
+}
+
+/* Optional: Styling on hover */
+button:hover {
+    opacity: 0.9;
+}
