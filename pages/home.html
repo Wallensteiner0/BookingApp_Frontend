@@ -20,7 +20,6 @@
 <body class="home-page">
 <div class="home">
     <div class="home-body container">
-        <!-- Section for everyone -->
         <h1 class="color-change" style="color: #65a503">Driving School Community</h1>
         <h2>Learn to drive easily and comfortably.</h2><br>
         <h3 style="padding-top: 20px">Do you want to learn to drive?<br>
@@ -37,66 +36,6 @@
             <button id="LoginButton" type="button" class="btn btn-primary">Login</button>
         </p>
     </div>
-
-    <!-- Section for logged-in users -->
-    <div id="loggedInSection" class="container" style="display: none;">
-        <h2>Welcome "here comes username of logged-in user"!</h2>
-        <div id="studentSection" style="display: none;">
-            <p>Exclusive content for students.</p>
-        </div>
-        <div id="instructorSection" style="display: none;">
-            <p>Exclusive content for instructors.</p>
-        </div>
-        <div id="adminSection" style="display: none;">
-            <p>Exclusive content for admins.</p>
-        </div>
-    </div>
 </div>
-
-<!--<script>-->
-<!--    $(document).ready(function() {-->
-<!--        const roles = getUserRoles();-->
-
-<!--        // Show sections based on user roles-->
-<!--        if (roles.includes("ROLE_INSTRUCTOR") || roles.includes("ROLE_ADMIN")) {-->
-<!--            document.getElementById("instructorSection").style.display = "block";-->
-<!--        }-->
-<!--        if (roles.includes("ROLE_ADMIN")) {-->
-<!--            document.getElementById("adminSection").style.display = "block";-->
-<!--        }-->
-<!--        if (roles.includes("ROLE_STUDENT")) {-->
-<!--            document.getElementById("studentSection").style.display = "block";-->
-<!--        }-->
-<!--    });-->
-
-<!--    // Helper function to get roles-->
-<!--    function getUserRoles() {-->
-<!--        return localStorage.getItem("userRoles") ? JSON.parse(localStorage.getItem("userRoles")) : [];-->
-<!--    }-->
-<!--</script>-->
-
-
-<script type="text/javascript">
-    document.addEventListener('DOMContentLoaded', function () {
-        const roles = getUserRoles();
-
-        if (roles) {
-            // Show the logged-in section
-            document.getElementById('loggedInSection').style.display = 'block';
-
-            // Check role and display appropriate section
-            if (isStudent()) {
-                document.getElementById('studentSection').style.display = 'block';
-            }
-            if (isInstructor()) {
-                document.getElementById('instructorSection').style.display = 'block';
-            }
-            if (isAdmin()) {
-                document.getElementById('adminSection').style.display = 'block';
-            }
-        }
-    });
-</script>
-
 </body>
 </html>
