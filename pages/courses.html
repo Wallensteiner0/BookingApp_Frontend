@@ -5,14 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Driving School Courses</title>
     <link rel="stylesheet" href="../src/css/courses.css">
-
-<!--    <script type="text/javascript">-->
-<!--        $(document).ready(function () {-->
-<!--            $('#RegisterLink').click(function () {-->
-<!--                $('#div_content').load('./pages/registration.html');-->
-<!--            });-->
-
-<!--    </script>-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#RegisterButton').click(function () {
+                $('#div_content').load('./pages/registration.html');
+            });
+            $('#LoginButton').click(function () {
+                $('#div_content').load('./pages/login.html');
+            });
+        });
+    </script>
 
 </head>
 <body>
@@ -21,8 +24,8 @@
     <img src="../src/images/bg_05.jpg" alt="Driving on the road">
     <div class="hero-text">
         <h2>Start your journey to freedom now!</h2>
-        <a href="../pages/registration.html" class="btn">Register here</a>
-<!--        <a href="#" id="RegisterLink">Register</a>-->
+        <button id="RegisterButton" type="button" class="btn btn-primary">Register here</button>
+
     </div>
 </section>
 
