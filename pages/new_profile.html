@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+      <html lang="en">
+      <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Profile</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    .profile-img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+    .table-responsive {
+      max-height: 300px;
+      overflow-y: scroll;
+    }
+  </style>
+</head>
+<body>
+<div class="container my-4">
+  <h1>Profile</h1>
+  <p class="lead">Hey, {Name}</p>
+  <div class="text-center">
+    <img src="../src/images/default-profile.jpg" alt="Profile Image" class="profile-img"><br>
+    <!-- Verstecktes File Input Feld -->
+    <input type="file" class="form-control d-none" id="profilePicture" name="profilePicture">
+    <!-- Sichtbarer Button -->
+    <button type="button" class="btn btn-primary mt-2" id="updatePictureBtn">Update Picture</button>
+
+  </div>
+
+  <section class="mt-5">
+    <h3>Personal Data</h3>
+    <form action="/update-profile" method="POST">
+      <div class="mb-3">
+        <label for="firstName" class="form-label">First Name</label>
+        <input type="text" class="form-control" id="firstName" name="firstName" value="Andreas">
+      </div>
+      <div class="mb-3">
+        <label for="lastName" class="form-label">Last Name</label>
+        <input type="text" class="form-control" id="lastName" name="lastName" value="Wallensteiner">
+      </div>
+      <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input type="email" class="form-control" id="email" name="email" value="andreas@example.com">
+      </div>
+      <div class="mb-3">
+        <label for="phone" class="form-label">Phone</label>
+        <input type="text" class="form-control" id="phone" name="phone" value="+43 123456789">
+      </div>
+      <button type="submit" class="btn btn-success">Save Changes</button>
+    </form>
+  </section>
+
+  <section class="mt-5">
+    <h3>Notifications</h3>
+    <p>No new notifications.</p>
+  </section>
+
+  <section class="mt-5">
+    <h3>My Courses</h3>
+    <div class="table-responsive">
+      <table class="table table-striped table-hover">
+        <thead>
+        <tr>
+          <th>Course Title</th>
+          <th>Date</th>
+          <th>Time</th>
+          <th>Instructor</th>
+          <th>Status</th>
+          <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>Basic Driving Course</td>
+          <td>2024-10-20</td>
+          <td>10:00 AM</td>
+          <td>John Doe</td>
+          <td>Booked</td>
+          <td>
+            <button class="btn btn-warning btn-sm" disabled>Cancel</button>
+          </td>
+        </tr>
+        <tr>
+          <td>Advanced Driving Course</td>
+          <td>2024-10-25</td>
+          <td>2:00 PM</td>
+          <td>Jane Smith</td>
+          <td>Open</td>
+          <td>
+            <button class="btn btn-primary btn-sm">Book</button>
+          </td>
+        </tr>
+        <tr>
+          <td>Night Driving Course</td>
+          <td>2024-11-01</td>
+          <td>6:00 PM</td>
+          <td>Mark Lee</td>
+          <td>Full</td>
+          <td>
+            <button class="btn btn-secondary btn-sm" disabled>Full</button>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="mt-5">
+    <h3>Downloads</h3>
+    <ul class="list-group">
+      <li class="list-group-item">
+        <a href="/download/certificate1.pdf" download>Driving Certificate - PDF</a>
+      </li>
+      <li class="list-group-item">
+        <a href="/download/manual.pdf" download>Driving Manual - PDF</a>
+      </li>
+      <li class="list-group-item">
+        <a href="/download/rules.pdf" download>Rules of the Road - PDF</a>
+      </li>
+    </ul>
+  </section>
+
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+</title>
+</head>
+<body>
+
+</body>
+</html>
