@@ -51,7 +51,6 @@
     </div>
 </div>
 
-
 <section class="mt-5">
     <h3>Personal Data</h3>
     <form action="/update-profile" method="POST" class="needs-validation" novalidate>
@@ -84,6 +83,13 @@
                 Please provide a valid phone number.
             </div>
         </div>
+        <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+            <input type="password" class="form-control" id="password" name="password" required>
+            <div class="invalid-feedback">
+                Please provide a valid password (min. 12 characters, uppercase, lowercase, number, symbol).
+            </div>
+            <br>
         <button type="submit" class="btn btn-success">Save Changes</button>
     </form>
 </section>
@@ -162,7 +168,7 @@
 <script>
     document.addEventListener('DOMContentLoaded', function () {
 
-        // Allgemeine Validierungsfunktion
+        // Allgemeine Validierungsfunktion ===================================================
         function validateInput(input, validationFunction, errorMessage) {
             input.addEventListener('input', function () {
                 const value = input.value;
@@ -179,8 +185,6 @@
                 }
             });
         }
-
-        // Feldvalidierungsfunktionen ===================================================
 
         // Profilbild aktualisieren
         const profilePictureInput = document.getElementById('profilePicture');
@@ -244,14 +248,10 @@
         });
 
 
-        // Mindestlänge für Vor- und Nachname
+        //Weitere Feld-Validierung ================================
+
+        // Mindestlänge der Felder
         const isNotEmpty = value => value.length >= 4;
-
-        // Einfache E-Mail-Validierung
-        const isValidEmail = value => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
-
-        // Gültige Telefonnummer (min. 10-15 Ziffern)
-        const isValidPhone = value => /^\+?\d{10,15}$/.test(value);
 
         // Vorname validieren
         const firstNameInput = document.getElementById('firstName');
@@ -261,15 +261,22 @@
         const lastNameInput = document.getElementById('lastName');
         validateInput(lastNameInput, isNotEmpty, 'Please provide a valid last name (min. 4 characters).');
 
-        // E-Mail validieren
+        // Einfache E-Mail-Validierung
+        const isValidEmail = value => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
         const emailInput = document.getElementById('email');
         validateInput(emailInput, isValidEmail, 'Please provide a valid email address.');
 
-        // Telefonnummer validieren
+        // Gültige Telefonnummer (min. 10-15 Ziffern)
+        const isValidPhone = value => /^\+?\d{10,15}$/.test(value);
         const phoneInput = document.getElementById('phone');
         validateInput(phoneInput, isValidPhone, 'Please provide a valid phone number starting with "+" (no Spaces).');
+
+        // Passwort validieren
+        const isValidPassword = value => /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{12,}$/.test(value);
+        const passwordInput = document.getElementById('password');
+        validateInput(passwordInput, isValidPassword, 'Please provide a valid password (min. 12 characters, uppercase, lowercase, number, symbol).');
+
     });
 </script>
-
 </body>
 </html>
