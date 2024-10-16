@@ -4,99 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#UsersButton').click(function () {
+                $('#div_content').load('./pages/users.html');
+            });
+            $('#ProfileButton').click(function () {
+                $('#div_content').load('./pages/profile.html');
+            });
+            $('#EventsButton').click(function () {
+                $('#div_content').load('./pages/events.html');
+            });
+            $('#BookingsButton').click(function () {
+                $('#div_content').load('./pages/bookings.html');
+            });
+        });
+    </script>
     <!-- External JavaScript -->
     <script src="../src/js/admin.js" crossorigin="use-credentials"></script>
 </head>
+
 <body>
 <div class="container">
-    <h1>Hello Admin</h1>
-    <div class="row">
-        <!-- Button trigger modal -->
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#createUserModal" id="createUserModalButton">
-            Create New User
-        </button>
-    </div>
-    <div class="row">
-        <table style="border: 1px solid black" id="table_users">
-            <thead>
-            <tr>
-                <th>ID</th>
-                <th>Name</th>
-                <th>Email</th>
-                <th>Role</th>
-                <th>Country</th>
-                <th></th>
-            </tr>
-            </thead>
-            <tbody>
+    <div class="admin">
+        <h1 style="padding-bottom: 20px">Hello Admin</h1>
 
-            </tbody>
-        </table>
-    </div>
-</div>
-
-<!-- Modal Create New User -->
-<div class="modal" id="createUserModal" tabindex="-1" aria-labelledby="createUserModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="createUserModalLabel">New User</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <table>
-                    <tr>
-                        <td>Username:</td>
-                        <td><input type="text" id="username"></td>
-                    </tr>
-                    <tr>
-                        <td>Email:</td>
-                        <td><input type="text" id="email"></td>
-                    </tr>
-                    <tr>
-                        <td>Password:</td>
-                        <td><input type="password" id="password"></td>
-                    </tr>
-                    <tr>
-                        <td>Gender:</td>
-                        <td>
-                            <select name="gender" id="gender">
-                                <option value="FEMALE">Female</option>
-                                <option value="MALE">Male</option>
-                                <option value="OTHER">Other</option>
-                            </select>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Other:</td>
-                        <td><input type="text" id="other"></td>
-                    </tr>
-                    <tr>
-                        <td>Country:</td>
-                        <td>
-                            <select name="country" id="country">
-
-                            </select>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Role:</td>
-                        <td>
-                            <select name="role" id="role">
-                                <option value="ROLE_STUDENT">Student</option>
-                                <option value="ROLE_INSTRUCTOR">Instructor</option>
-                                <option value="ROLE_ADMIN">Admin</option>
-                            </select>
-                        </td>
-                    </tr>
-                </table>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                <button type="button" class="btn btn-primary" id="saveUser">Save</button>
-            </div>
+        <div class="d-grid gap-3 col-10 mx-auto" style="padding-top: 40px">
+            <button class="btn btn-primary" type="button" id="UsersButton">List of all Users</button>
+            <button class="btn btn-primary" type="button" id="EventsButton">List of all Events</button>
+            <button class="btn btn-primary" type="button" id="BookingsButton">List of all Bookings</button>
+            <button class="btn btn-primary" type="button" id="ProfileButton">My Profile</button>
         </div>
+
     </div>
 </div>
 </body>

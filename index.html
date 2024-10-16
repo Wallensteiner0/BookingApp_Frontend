@@ -39,12 +39,14 @@
             // });
             $('#HomeLink').click(function () {
                 const roles = getUserRoles();
-                if (roles.includes("ROLE_ADMIN")) {
-                    $('#div_content').load('./pages/home_admin.html');
-                } else if (roles.includes("ROLE_INSTRUCTOR")) {
-                    $('#div_content').load('./pages/home_instructor.html');
-                } else if (roles.includes("ROLE_STUDENT")) {
-                    $('#div_content').load('./pages/home_student.html');
+                if(roles != null) {
+                    if (roles.includes("ROLE_ADMIN")) {
+                        $('#div_content').load('./pages/home_admin.html');
+                    } else if (roles.includes("ROLE_INSTRUCTOR")) {
+                        $('#div_content').load('./pages/home_instructor.html');
+                    } else if (roles.includes("ROLE_STUDENT")) {
+                        $('#div_content').load('./pages/home_student.html');
+                    }
                 } else {
                     $('#div_content').load('./pages/home.html');
                 }
@@ -59,7 +61,9 @@
                 $('#div_content').load('./pages/courses.html');
             });
             $('#ContactLink').click(function () {
-                $('#div_content').load('./pages/contact.html');
+                $('#div_content').load('./pages/contact.html', function () {
+                    $('#div_content').addClass('no-center');
+                });
             });
             $('#TeamLink').click(function () {
                 $('#div_content').load('./pages/team.html');
@@ -106,17 +110,12 @@
     <nav class="navbar">
         <ul class="nav-left">
             <li><a href="#" id="HomeLink">Home</a></li>
-            <li class="dropdown">
-                <a href="#">Pages</a>
-                <ul class="dropdown-content">
-                    <li><a href="#" id="ProfileLink">Profile</a></li>
-                    <li><a href="#" id="EventsLink">Events</a></li>
-                </ul>
-            </li>
+            <li><a href="#" id="ProfileLink">My Profile</a></li>
             <li><a href="#" id="CoursesLink">Courses</a></li>
-            <li><a href="#" id="ContactLink">Contact</a></li>
-            <li><a href="#" id="TeamLink">Team</a></li>
+            <li><a href="#" id="TeamLink">Our Team</a></li>
             <li><a href="#" id="FAQLink">FAQ</a></li>
+            <li><a href="#" id="ContactLink">Contact</a></li>
+
         </ul>
         <ul class="nav-left a">
             <li style="margin-left: auto;"><a href="#" id="LoginLink">Login</a></li>

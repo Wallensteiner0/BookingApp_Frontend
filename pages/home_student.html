@@ -3,11 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin</title>
+    <title>Student</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#ProfileButton').click(function () {
+                $('#div_content').load('./pages/profile.html');
+            });
+            $('#EventsButton').click(function () {
+                $('#div_content').load('./pages/events.html');
+            });
+            $('#BookingsButton').click(function () {
+                $('#div_content').load('./pages/bookings.html');
+            });
+        });
+    </script>
 </head>
 <body>
 <div class="container">
-    <h1>Hello Student</h1>
+    <div class="student">
+        <h1 style="padding-bottom: 20px">Hello Student</h1>
+        <p>Here you can view all upcoming events and your bookings. You can easily book your next course or simply view your profile.</p><br>
+        <div class="d-grid gap-3 col-10 mx-auto">
+            <button class="btn btn-primary" type="button" id="EventsButton">All Events</button>
+            <button class="btn btn-primary" type="button" id="BookingsButton">My Bookings</button>
+            <button class="btn btn-primary" type="button" id="ProfileButton">My Profile</button>
+        </div>
+    </div>
 </div>
 </body>
 </html>

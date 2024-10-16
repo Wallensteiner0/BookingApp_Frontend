@@ -19,7 +19,7 @@
     margin: 30px auto;
     background-color: rgba(255, 255, 255, 0.9);
     color: #2a2a2a;
-    padding: 30px 20px;
+    padding: 5px 20px;
     font-size: 18px;
     text-align: left;
     border-radius: 10px;
@@ -55,7 +55,7 @@ body.home-page {
     align-items: center;
     text-align: center;
     flex-direction: column;
-    padding: 30px 0; /* Add padding to avoid content sticking to the top/bottom */
+    padding: 20px 0; /* Add padding to avoid content sticking to the top/bottom */
 }
 
 .home .container {
@@ -86,7 +86,7 @@ main {
     flex-grow: 1;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    /*justify-content: space-between;*/
 }
 
 #div_content {
@@ -94,6 +94,10 @@ main {
     display: flex;
     flex-direction: column;
     justify-content: center; /* Vertically center the content if it's shorter */
+}
+
+#div_content.no-center {
+    justify-content: flex-start; /* Or another value to deactivate centering */
 }
 
 /* Navbar */
@@ -124,7 +128,8 @@ main {
 }
 
 .nav-left a:hover {
-    background-color: #555;
+    background-color: #65a503;
+    border-radius: 15px;
 }
 
 /* Dropdown */
@@ -188,7 +193,10 @@ footer a {
 }
 
 #LinkImpressum:hover {
-    color: #65a503 !important;
+    background-color: #65a503;
+    border-radius: 15px;
+    padding: 5px 10px;
+    transition: background 0.3s;
 }
 
 /* Responsives Design */
@@ -225,4 +233,59 @@ footer a {
 
 .btn {
     font-size: 18px !important;
+}
+
+#loginBtn, #registerBtn {
+    width: 100%;
+}
+
+#loginBtn:hover {
+    background-color: #65a503;
+}
+
+.student .btn-primary:hover {
+    background-color: #65a503;
+}
+
+#contact {
+    width: 100%;
+}
+
+#send-emailBtn {
+    width: 100%;
+}
+
+.btn:hover {
+    background-color: #65a503 !important;
+    border: none;
+}
+
+#UsersButton,
+#EventsButton,
+#BookingsButton,
+#ProfileButton {
+    height: 100px;
+    width: 80%;
+    border: none;
+}
+
+#UsersButton {
+    background-color: #0159b6;
+}
+
+#EventsButton {
+    background-color: #007bff; /* Bootstrap Primary Blue */;
+}
+
+#BookingsButton {
+    background-color: #0961d3
+}
+
+#ProfileButton {
+    background-color: #2057a6;
+}
+
+button:hover {
+    opacity: 0.9;
+    border: none;
 }
