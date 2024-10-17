@@ -51,3 +51,5 @@ _testmain.go
 *.psd
 
 backup/
+
+*test.html

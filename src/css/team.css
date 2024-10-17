@@ -1,0 +1,50 @@
+/* Für große Bildschirme */
+div.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Flexible Spalten basierend auf Bildschirmgröße */
+    gap: 30px; /* Abstand zwischen den Kacheln */
+    max-width: 80%; /* Containerbreite begrenzen */
+    margin: auto; /* Container zentrieren */
+}
+
+div.container div {
+    background-color: #f7f7f7; /* Hintergrundfarbe der Kacheln */
+    border-radius: 15px; /* Abgerundete Ecken für Kacheln */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Weicher Schatten für Kacheln */
+    padding: 20px; /* Polsterung innerhalb der Kachel */
+    text-align: center; /* Text zentrieren */
+    transition: transform 0.5s ease, box-shadow 0.5s ease; /* Übergänge für Hover-Effekte */
+}
+
+div.container div:hover {
+    transform: scale(1.05); /* Kachel beim Hover leicht vergrößern */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Intensiverer Schatten beim Hover */
+}
+
+/* Bild-Styling */
+img {
+    width: auto;
+    height: 100px;
+    border-radius: 50%; /* Runde Ecken für das Bild */
+    object-fit: cover;
+    transition: transform 0.5s ease;
+    border: 3px solid #dbba34; /* Goldener Rahmen */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Weicher Schatten */
+}
+
+img:hover {
+    transform: scale(1.1); /* Vergrößert das Bild beim Hover */
+}
+
+/* Mobile Optimierung (max-width: 768px) */
+@media (max-width: 768px) {
+    div.container {
+        grid-template-columns: 1fr; /* Eine Spalte auf kleineren Bildschirmen */
+        max-width: 100%; /* Volle Breite auf kleinen Bildschirmen */
+    }
+
+    div.container div {
+        width: 90%; /* Breite jeder Kachel */
+        margin: 0 auto; /* Zentrieren der Kacheln */
+    }
+}

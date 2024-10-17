@@ -3,50 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../src/css/team.css">
     <title>Team</title>
-    <style>
-        img {
-            width: auto;            /* Setzt die Bildbreite auf 50% der Breite des umgebenden Elements */
-            height: 100px;          /* Erhält das Seitenverhältnis des Bildes */
-            border-radius: 50%;     /* Macht die Ecken rund und erstellt einen Kreis */
-            overflow: hidden;       /* Überschüssiges Bild abschneiden */
-            object-fit: cover;      /* Das Bild so zuschneiden, dass es den Kreis füllt */
-        }
-        div.container {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 10px;
-            background-color: rgba(170, 170, 164, 0.42);
-        }
-        div.container div {
-            width:30%;
-        }
-    </style>
 </head>
 <body>
 
-<h1 class="main">Team</h1>
+<h1 class="color-change">Our Team</h1>
 <h2>Members:</h2>
 
 <div class="container">
-
     <div><figure>
-        <img src="../src/images/team_zuzka.jpg" alt="Zuzka Glaess">
-        <figcaption>Zuzka Glaess<br><small>(CEO)</small></figcaption>
-    </figure></div>
+        <img src="../src/images/team_andreas.jpg" alt="Andreas Wallensteiner">
+        <figcaption>
+            <b>Andreas Wallensteiner</b><br>
+            <small>Driving Instructor<br> AM, A, B, BE</small><br><br>
+            <em>"loves fast motorbikes"</em>
+        </figcaption>
+    </figure>
+
+    </div>
 
     <div><figure>
         <img src="../src/images/team_gerhard.jpg" alt="Gerhard Meyer">
-        <figcaption>Gerhard Meyer<br><small>(Head of Office)</small></figcaption>
+        <figcaption><b>Gerhard Meyer</b><br><small>Head of Office</small><br><br>
+            <em>keeps everthing running like "a well oiled machine"</em></figcaption>
     </figure></div>
 
     <div><figure>
-        <img src="../src/images/team_andreas.jpg" alt="Andreas Wallensteiner">
-        <figcaption>Andreas Wallensteiner<br><small>Driving Instructor (AM, A, B, BE)</small></figcaption>
+        <img src="../src/images/team_zuzka.jpg" alt="Zuzka Glaess">
+        <figcaption><b>Zuzka Glaess</b><br><br><small>Web Design</small><br><br>
+            <em>"head of eye-candy"</em></figcaption>
     </figure></div>
 
 </div>
-
 </body>
 </html>
