@@ -34,9 +34,9 @@
             $('#LoginLink').click(function () {
                 $('#div_content').load('./pages/login.html');
             });
-            // $('#RegisterLink').click(function () {
-            //     $('#div_content').load('./pages/registration.html');
-            // });
+            $('#RegisterLink').click(function () {
+                $('#div_content').load('./pages/registration.html');
+            });
             $('#HomeLink').click(function () {
                 const roles = getUserRoles();
                 if(roles != null) {
@@ -119,7 +119,7 @@
         </ul>
         <ul class="nav-left a">
             <li style="margin-left: auto;"><a href="#" id="LoginLink">Login</a></li>
-<!--            <li><a href="#" id="RegisterLink">Register</a></li>-->
+            <li><a href="#" id="RegisterLink">Register</a></li>
         </ul>
     </nav>
 </header>
