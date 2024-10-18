@@ -98,9 +98,8 @@ $('#saveEvent').click(function () {
 
 $('#updateEvent').click(function () {
 
-        const apiUrl = "http://localhost:8080/api/events"
+        const apiUrl = "http://localhost:8080/api/events/" + $('#eventIDU').val();
         const data = {
-            "id": $('#eventIDU').val(),
             "title": $('#eventTitleU').val(),
             "eventType": $('#eventTypeU').val(),
             "eventStatus": $('#eventStatusU').val(),
@@ -143,7 +142,7 @@ $('#updateEvent').click(function () {
 function deleteEvent(eventID) {
     if (eventID === undefined) eventID = -1;
 
-    const apiUrl = "http://localhost:8080/api/events?eventId=" + eventID
+    const apiUrl = "http://localhost:8080/api/events/" + eventID
 
     $.ajax({
         type: "DELETE",
@@ -174,7 +173,7 @@ function deleteEvent(eventID) {
 function getEvent(eventID) {
     if (eventID === undefined) eventID = -1;
 
-    const apiUrl = "http://localhost:8080/api/event?eventId=" + eventID
+    const apiUrl = "http://localhost:8080/api/events/" + eventID
 
     $.ajax({
         type: "GET",

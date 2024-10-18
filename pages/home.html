@@ -3,16 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Imprint</title>
+    <title>Homepage</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#RegisterButton').click(function () {
+                $('#div_content').load('./pages/registration.html');
+            });
+            $('#LoginButton').click(function () {
+                $('#div_content').load('./pages/login.html');
+            });
+        });
+    </script>
 </head>
 
-<body>
+<body class="home-page">
 <div class="home">
-    <div class="background-image">
-        <div class="main">
-            <h1 class="color-change">Driving school community</h1>
-        </div>
-        <h2>Learn to drive <br>easily and comfortably</h2>
+    <div class="home-body container">
+        <h1 class="color-change" style="color: #65a503">Driving School Community</h1>
+        <h2>Learn to drive easily and comfortably.</h2><br>
+        <h3 style="padding-top: 20px">Do you want to learn to drive?<br>
+            Or refresh your driving skills?<br>
+            Do you need to take an exam?</h3>
+        <p style="padding-top: 20px">
+            <button id="RegisterButton" type="button" class="btn btn-primary" style="width: 220px; height: 50px">Register</button>
+            to choose from our various <br>
+            <span class="highlight-text">theory classes</span>, <span
+                class="highlight-text">driving practice sessions</span>, or <span
+                class="highlight-text">exams</span>.<br>
+            <br>
+            Already registered?<br>
+            <button id="LoginButton" type="button" class="btn btn-primary" style="width: 80%; height: 50px">Login</button>
+        </p>
     </div>
 </div>
 </body>

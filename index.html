@@ -34,8 +34,22 @@
             $('#LoginLink').click(function () {
                 $('#div_content').load('./pages/login.html');
             });
-            $('#RegisterLink').click(function () {
-                $('#div_content').load('./pages/registration.html');
+            // $('#RegisterLink').click(function () {
+            //     $('#div_content').load('./pages/registration.html');
+            // });
+            $('#HomeLink').click(function () {
+                const roles = getUserRoles();
+                if(roles != null) {
+                    if (roles.includes("ROLE_ADMIN")) {
+                        $('#div_content').load('./pages/home_admin.html');
+                    } else if (roles.includes("ROLE_INSTRUCTOR")) {
+                        $('#div_content').load('./pages/home_instructor.html');
+                    } else if (roles.includes("ROLE_STUDENT")) {
+                        $('#div_content').load('./pages/home_student.html');
+                    }
+                } else {
+                    $('#div_content').load('./pages/home.html');
+                }
             });
             $('#ProfileLink').click(function () {
                 $('#div_content').load('./pages/profile.html');
@@ -47,7 +61,9 @@
                 $('#div_content').load('./pages/courses.html');
             });
             $('#ContactLink').click(function () {
-                $('#div_content').load('./pages/contact.html');
+                $('#div_content').load('./pages/contact.html', function () {
+                    $('#div_content').addClass('no-center');
+                });
             });
             $('#TeamLink').click(function () {
                 $('#div_content').load('./pages/team.html');
@@ -68,7 +84,6 @@
             if(roles) {
                 return roles.includes("ADMIN");
             }
-
             return false;
         }
 
@@ -77,7 +92,6 @@
             if(roles) {
                 return roles.includes("INSTRUCTOR");
             }
-
             return false;
         }
 
@@ -86,7 +100,6 @@
             if(roles) {
                 return roles.includes("STUDENT");
             }
-
             return false;
         }
     </script>
@@ -96,35 +109,25 @@
 <header>
     <nav class="navbar">
         <ul class="nav-left">
-            <li><a href="index.html">Home</a></li>
-            <li class="dropdown">
-                <a href="#">Pages</a>
-                <ul class="dropdown-content">
-                    <li><a href="#" id="ProfileLink">Profile</a></li>
-                    <li><a href="#" id="EventsLink">Events</a></li>
-                    <!--                        <li><a href="#" id="FAQLink2">FAQ</a></li>
-                                            <li><a href="#" id="CoursesLink2">Courses</a></li>
-                                            <li><a href="pages/form.html">Form</a></li>
-                                            <li><a href="pages/imprint.html">Imprint</a></li>
-                                            <li><a href="#" id="TeamLink2">Team</a></li>
-                                            <li><a href="#" id="ContactLink2">Contact</a></li> -->
-                </ul>
-            </li>
+            <li><a href="#" id="HomeLink">Home</a></li>
+            <li><a href="#" id="ProfileLink">My Profile</a></li>
             <li><a href="#" id="CoursesLink">Courses</a></li>
-            <li><a href="#" id="ContactLink">Contact</a></li>
-            <li><a href="#" id="TeamLink">Team</a></li>
+            <li><a href="#" id="TeamLink">Our Team</a></li>
             <li><a href="#" id="FAQLink">FAQ</a></li>
+            <li><a href="#" id="ContactLink">Contact</a></li>
+
         </ul>
         <ul class="nav-left a">
             <li style="margin-left: auto;"><a href="#" id="LoginLink">Login</a></li>
-            <li><a href="#" id="RegisterLink">Register</a></li>
-
+<!--            <li><a href="#" id="RegisterLink">Register</a></li>-->
         </ul>
     </nav>
 </header>
 
 <main>
-    <div class="align-content-center" id="div_content"></div>
+    <div class="background-image">
+        <div class="page-body container" id="div_content"></div>
+    </div>
 </main>
 
 <footer>

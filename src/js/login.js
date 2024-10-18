@@ -7,6 +7,8 @@ $("#loginBtn").click(function () {
         "password": $('#password').val()
     }
 
+
+
     if (($("#username").val() !== "") && ($("#password").val() !== "")) {
 
         $.ajax({
@@ -18,14 +20,30 @@ $("#loginBtn").click(function () {
             success: function(response, status, xhr) {
                 console.log(response);
                 $('#result').val(JSON.stringify(response));
-                //token
+                //token from the response header
                 token = xhr.getResponseHeader("Authorization");
-                console.log(token);
-                localStorage.setItem("token",token);
+
+                if (token) {
+                    // Remove the "Bearer " prefix (first 7 characters)
+                    token = token.substring(7);
+                    console.log(token);
+                    localStorage.setItem("token", token);
+                }
+
                 // console.log(localStorage.getItem('bookingCookie'))
                 if (response) {
+                    const roles = response.roles;
                     localStorage.setItem("userRoles",response.roles);
-                    $("#userName").html("Hello " + response.username + "!");
+
+                    if (roles.includes("ROLE_ADMIN")) {
+                        $('#div_content').load('./pages/home_admin.html');
+                    } else if (roles.includes("ROLE_INSTRUCTOR")) {
+                        $('#div_content').load('./pages/home_instructor.html');
+                    } else if (roles.includes("ROLE_STUDENT")) {
+                        $('#div_content').load('./pages/home_student.html');
+                    } else {
+                        //$('#div_content').load('./pages/home.html');
+                    }
                 } else {
                     console.log("Login failed");
                 }
@@ -36,6 +54,7 @@ $("#loginBtn").click(function () {
             }
         });
     } else {
+        $('.alert').show();
         alert("Username or password missing!");
     }
 });

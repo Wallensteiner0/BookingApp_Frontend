@@ -10,12 +10,12 @@
 </head>
 <body>
 <div class="container">
-    <h1 class="login-header color-change" style="text-align: left">Events list</h1>
-<!--    <h2>List for registered users - students, instructors and admins</h2>-->
+    <h1 class="login-header color-change" style="text-align: left">List of all Events</h1>
 
     <div class="row">
         <!-- Button trigger modal -->
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#createEventModal" id="createEventModalButton" style="display: none;">
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#createEventModal"
+                id="createEventModalButton" style="display: none;">
             Create New Event
         </button>
     </div>
@@ -28,7 +28,9 @@
                 <th>Type</th>
                 <th>Status</th>
                 <th>Price (€)</th>
-                <th>Date</th>
+                <th>Start Date</th>
+                <th>Created</th>
+                <th>Updated</th>
                 <th></th>
             </tr>
             </thead>
@@ -95,66 +97,66 @@
 </div>
 
 <!-- Modal Update Existing Event -->
-    <div class="modal" id="updateEventModal" tabindex="-1" aria-labelledby="updateEventModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="updateEventModalLabel">Update Event</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <table>
-                        <tr>
-                            <td>ID:</td>
-                            <td><input type="text" id="eventIDU" disabled="disabled"></td>
-                        </tr>
-                        <tr>
-                            <td>Title:</td>
-                            <td><input type="text" id="eventTitleU"></td>
-                        </tr>
-                        <tr>
-                            <td>Type:</td>
-                            <td>
-                                <select name="eventType" id="eventTypeU">
-                                    <option value="THEORY">Theory</option>
-                                    <option value="DRIVING">Driving</option>
-                                    <option value="FIRST_AID">First Aid</option>
-                                    <option value="THEORY_EXAM">Theory Exam</option>
-                                    <option value="PRACTICAL_EXAM">Practical Exam</option>
-                                </select>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Status:</td>
-                            <td>
-                                <select name="eventStatus" id="eventStatusU">
-                                    <option value="OPEN" selected="selected">Open</option>
-                                    <option value="FULL">Full</option>
-                                    <option value="CANCELED">Canceled</option>
-                                </select>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Price:</td>
-                            <td><input type="text" id="eventPriceU"></td>
-                        </tr>
-                        <tr>
-                            <td>Start:</td>
-                            <td><input type="date" id="eventDateU"></td>
-                        </tr>
-                    </table>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                    <button type="button" class="btn btn-primary" id="updateEvent">Update</button>
-                </div>
+<div class="modal" id="updateEventModal" tabindex="-1" aria-labelledby="updateEventModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="updateEventModalLabel">Update Event</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <table>
+                    <tr>
+                        <td>ID:</td>
+                        <td><input type="text" id="eventIDU" disabled="disabled"></td>
+                    </tr>
+                    <tr>
+                        <td>Title:</td>
+                        <td><input type="text" id="eventTitleU"></td>
+                    </tr>
+                    <tr>
+                        <td>Type:</td>
+                        <td>
+                            <select name="eventType" id="eventTypeU">
+                                <option value="THEORY">Theory</option>
+                                <option value="DRIVING">Driving</option>
+                                <option value="FIRST_AID">First Aid</option>
+                                <option value="THEORY_EXAM">Theory Exam</option>
+                                <option value="PRACTICAL_EXAM">Practical Exam</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Status:</td>
+                        <td>
+                            <select name="eventStatus" id="eventStatusU">
+                                <option value="OPEN" selected="selected">Open</option>
+                                <option value="FULL">Full</option>
+                                <option value="CANCELED">Canceled</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Price:</td>
+                        <td><input type="text" id="eventPriceU"></td>
+                    </tr>
+                    <tr>
+                        <td>Start:</td>
+                        <td><input type="date" id="eventDateU"></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-primary" id="updateEvent">Update</button>
             </div>
         </div>
     </div>
+</div>
 
 <script>
-    $(document).ready(function() {
-        if(isInstructor() || isAdmin()) {
+    $(document).ready(function () {
+        if (isInstructor() || isAdmin()) {
             document.getElementById("createEventModalButton").style.display = "block";
         }
     });

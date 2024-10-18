@@ -1,4 +1,6 @@
-/* Background Image */
+/* Shared Styles for all pages */
+
+/* Background Image for all pages */
 .background-image {
     background-image: url('../images/bg_index.jpg');
     background-size: cover;
@@ -9,23 +11,73 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    color: white;
 }
 
+/* Common container for all pages */
+.page-body.container {
+    width: 85%;
+    margin: 30px auto;
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #2a2a2a;
+    padding: 5px 20px;
+    font-size: 18px;
+    text-align: left;
+    border-radius: 10px;
+}
+
+/* Common heading styles */
+h2 {
+    text-shadow: #333;
+    color: #2769c9 !important;
+}
+
+h3 {
+    color: #6e6e6e !important;
+}
+
+p {
+    color: #6e6e6e;
+}
+
+body {
+    text-align: left;
+}
+
+body.home-page {
+    text-align: center; /* Center text on home page */
+}
+
+/* Home page specific styles */
 .home {
-    height: 100vh; /* 100% of the viewport height */
+    min-height: auto; /* Minimum height is 100% of the viewport, but can shrink if content is less */
     display: flex;
     justify-content: center;
     align-items: center;
-    text-align: center; /* Center text horizontally */
-    flex-direction: column; /* Stack h1 and h2 vertically */
+    text-align: center;
+    flex-direction: column;
+    padding: 20px 0; /* Add padding to avoid content sticking to the top/bottom */
+}
+
+.home .container {
+    text-align: center;
+    padding: 30px 20px;
+    width: 85%;
+    margin: 0 auto; /* Center the container */
+}
+
+body.home-page {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    height: auto; /* Body should adjust based on content height */
 }
 
 body, html {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
-    height: 100%;
+    height: 100vh;
     display: flex;
     flex-direction: column;
 }
@@ -34,19 +86,19 @@ main {
     flex-grow: 1;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    /*justify-content: space-between;*/
 }
 
 #div_content {
+    /*min-width: 90%;*/
     flex-grow: 1;
     display: flex;
     flex-direction: column;
     justify-content: center; /* Vertically center the content if it's shorter */
 }
 
-h2 {
-    text-align: center;
-    text-shadow: #333;
+#div_content.no-center {
+    justify-content: flex-start; /* Or another value to deactivate centering */
 }
 
 /* Navbar */
@@ -77,7 +129,8 @@ h2 {
 }
 
 .nav-left a:hover {
-    background-color: #555;
+    background-color: #65a503;
+    border-radius: 15px;
 }
 
 /* Dropdown */
@@ -122,7 +175,7 @@ h2 {
 /* Mouse-Over Color change */
 .color-change:hover {
     transition: 0.8s ease;
-    color: lightskyblue;
+    color: #2769c9;
 }
 
 /* Footer */
@@ -140,8 +193,11 @@ footer a {
     text-decoration: none;
 }
 
-footer a:hover {
-    text-decoration: underline;
+#LinkImpressum:hover {
+    background-color: #65a503;
+    border-radius: 15px;
+    padding: 5px 10px;
+    transition: background 0.3s;
 }
 
 /* Responsives Design */
@@ -169,4 +225,68 @@ footer a:hover {
 
 .gallery {
     margin: 20px auto; /* Center the gallery */
+}
+
+.highlight-text {
+    font-size: 20px;
+    color: #2769c9;
+}
+
+.btn {
+    font-size: 18px !important;
+}
+
+#loginBtn, #registerBtn {
+    width: 100%;
+}
+
+#loginBtn:hover {
+    background-color: #65a503;
+}
+
+.student .btn-primary:hover {
+    background-color: #65a503;
+}
+
+#contact {
+    width: 100%;
+}
+
+#send-emailBtn {
+    width: 100%;
+}
+
+.btn:hover {
+    background-color: #65a503 !important;
+    border: none;
+}
+
+#UsersButton,
+#EventsButton,
+#BookingsButton,
+#ProfileButton {
+    height: 100px;
+    width: 80%;
+    border: none;
+}
+
+#UsersButton {
+    background-color: #0159b6;
+}
+
+#EventsButton {
+    background-color: #007bff; /* Bootstrap Primary Blue */;
+}
+
+#BookingsButton {
+    background-color: #0961d3
+}
+
+#ProfileButton {
+    background-color: #2057a6;
+}
+
+button:hover {
+    opacity: 0.9;
+    border: none;
 }
