@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../src/css/profile.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+</head>
+<body>
+<div class="container my-4">
+  <h1>Profile</h1>
+  <p class="lead">Hey, {Name}</p>
+
+  <div id="imagePreviewContainer" class="text-center">
+    <div class="crop-container position-relative">
+      <!-- Profilbild -->
+      <img id="imagePreview" src="../src/images/profile-dummy.jpg" alt="Profile Image" class="crop-image">
+      <span class="hover-text">Click to change</span>
+      <i class="camera-icon bi bi-camera-fill"></i>
+    </div>
+    <input type="file" class="form-control d-none" id="profilePicture" name="profilePicture" aria-label="Profile Picture Input">
+    <button type="button" id="savePictureBtn" class="btn btn-success mt-2 d-none">Save Picture</button>
+  </div>
+
+  <!-- Persönliche Daten -->
+  <section class="mt-5">
+    <h3>Personal Data</h3>
+    <form id="profileForm" action="/update-profile" method="POST">
+      <div class="mb-3">
+        <label for="firstName" class="form-label">First Name</label>
+        <input type="text" class="form-control" id="firstName" name="firstName" value="Andreas">
+      </div>
+      <div class="mb-3">
+        <label for="lastName" class="form-label">Last Name</label>
+        <input type="text" class="form-control" id="lastName" name="lastName" value="Wallensteiner">
+      </div>
+      <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input type="email" class="form-control" id="email" name="email" value="andreas@example.com">
+      </div>
+      <div class="mb-3">
+        <label for="phone" class="form-label">Phone</label>
+        <input type="text" class="form-control" id="phone" name="phone" value="+43 123456789">
+      </div>
+      <button type="submit" class="btn btn-success" id="saveChangesBtn">Save Changes</button>
+    </form>
+  </section>
+
+  <!-- Weitere Abschnitte (z.B. Kurse, Benachrichtigungen) ... -->
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.js"></script>
+
+<script>
+  let cropper;
+  let croppedImageBlob;
+
+  // Bild-Klick öffnet den Datei-Explorer
+  document.getElementById('imagePreview').addEventListener('click', function() {
+    document.getElementById('profilePicture').click();
+  });
+
+  // Bildauswahl und Cropping
+  document.getElementById('profilePicture').addEventListener('change', function(event) {
+    const file = event.target.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        const imgElement = document.getElementById('imagePreview');
+        imgElement.src = e.target.result;
+
+        // Cropper.js initialisieren
+        if (cropper) {
+          cropper.destroy(); // Alten Cropper zerstören
+        }
+        cropper = new Cropper(imgElement, {
+          aspectRatio: 1,  // Für quadratische Profilbilder
+          viewMode: 1,     // Begrenzung der Crop-Auswahl auf das Bild
+          preview: '.preview',
+          zoomable: true,
+          scrolable: false,
+        });
+
+        // "Save Picture" Button anzeigen
+        document.getElementById('savePictureBtn').classList.remove('d-none');
+      };
+      reader.readAsDataURL(file);
+    }
+  });
+
+  // Bild speichern (noch nicht an Backend senden)
+  document.getElementById('savePictureBtn').addEventListener('click', function() {
+    if (cropper) {
+      const canvas = cropper.getCroppedCanvas({
+        width: 150,
+        height: 150,
+      });
+
+      // Das Bild als Blob speichern, aber noch nicht hochladen
+      canvas.toBlob(function(blob) {
+        croppedImageBlob = blob; // Bild zwischenspeichern
+        document.getElementById('savePictureBtn').classList.add('d-none'); // Save Picture Button wieder ausblenden
+        alert('Picture saved! It will be uploaded when you click "Save Changes".');
+      }, 'image/jpeg');
+    }
+  });
+
+  // Beim Klick auf "Save Changes" werden alle Formularfelder und das Bild hochgeladen
+  document.getElementById('saveChangesBtn').addEventListener('click', function(event) {
+    event.preventDefault(); // Verhindert den Standardformular-Submit
+
+    const formData = new FormData(document.getElementById('profileForm'));
+
+    // Falls das Bild geändert wurde, füge es dem Formular hinzu
+    if (croppedImageBlob) {
+      formData.append('file', croppedImageBlob, 'profile-picture.jpg');
+    }
+
+    // Formular-Daten und Bild an das Backend senden
+    fetch('/api/update-profile', {
+      method: 'POST',
+      body: formData
+    })
+            .then(response => response.json())
+            .then(data => {
+              console.log('Upload successful:', data);
+              // Erfolgsnachricht oder Weiterleitung nach dem Speichern
+            })
+            .catch(error => {
+              console.error('Error during upload:', error);
+            });
+  });
+
+  // Bild speichern und danach das Bild ohne Bearbeitungsfunktion anzeigen
+  document.getElementById('savePictureBtn').addEventListener('click', function() {
+    if (cropper) {
+      const canvas = cropper.getCroppedCanvas({
+        width: 150,
+        height: 150,
+      });
+
+      // Das Bild als Blob speichern, aber noch nicht hochladen
+      canvas.toBlob(function(blob) {
+        croppedImageBlob = blob; // Bild zwischenspeichern
+
+        // Profilbild ohne Bearbeitungsfunktion anzeigen
+        const imgElement = document.getElementById('imagePreview');
+        imgElement.src = canvas.toDataURL();  // Aktualisiere das Bild in der Vorschau
+
+        // Cropper zerstören, da keine weitere Bearbeitung benötigt wird
+        cropper.destroy();
+        cropper = null;
+
+        // "Save Picture" Button wieder ausblenden
+        document.getElementById('savePictureBtn').classList.add('d-none');
+        alert('Picture saved! It will be uploaded when you click "Save Changes".');
+      }, 'image/jpeg');
+    }
+  });
+
+</script>
+
+</body>
+</html>
