@@ -96,9 +96,9 @@ main {
     justify-content: center; /* Vertically center the content if it's shorter */
 }
 
-#div_content.no-center {
-    justify-content: flex-start; /* Or another value to deactivate centering */
-}
+/*#div_content.no-center {*/
+/*    justify-content: flex-start; !* Or another value to deactivate centering *!*/
+/*}*/
 
 /* Navbar */
 .navbar {
@@ -233,18 +233,23 @@ footer a {
 
 .btn {
     font-size: 18px !important;
+    transition: background-color 0.3s ease, border 0.3s ease;
 }
 
 #loginBtn, #registerBtn {
     width: 100%;
+    transition: background-color 0.3s ease, opacity 0.3s ease;
 }
 
 #loginBtn:hover {
     background-color: #65a503;
+    opacity: 0.9;
+    border: 1px solid #65a503;
 }
 
 .student .btn-primary:hover {
     background-color: #65a503;
+    border: 1px solid #65a503;
 }
 
 #contact {
@@ -253,11 +258,28 @@ footer a {
 
 #send-emailBtn {
     width: 100%;
+    transition: background-color 0.3s ease, opacity 0.3s ease;
 }
 
 .btn:hover {
     background-color: #65a503 !important;
-    border: none;
+    border: 1px solid #65a503;
+}
+
+#UsersButton {
+    background-color: #19b5ef;
+}
+
+#EventsButton {
+    background-color: #0e86dc;
+}
+
+#BookingsButton {
+    background-color: #007bff; /* Bootstrap Primary Blue */;
+}
+
+#ProfileButton {
+    background-color: #1c5bb0;
 }
 
 #UsersButton,
@@ -269,20 +291,43 @@ footer a {
     border: none;
 }
 
-#UsersButton {
-    background-color: #0159b6;
-}
-
-#EventsButton {
-    background-color: #007bff; /* Bootstrap Primary Blue */;
-}
-
-#BookingsButton {
-    background-color: #0961d3
-}
-
+.admin #UsersButton,
+#EventsButton,
+#BookingsButton,
 #ProfileButton {
-    background-color: #2057a6;
+    height: 120px;
+    width: 260px;
+    border: none;
+    margin: 10px; /* Adjust spacing between buttons */
+    display: inline-block;
+    text-align: center;
+}
+
+/* Container styling for flexbox layout */
+.button-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* Ensures proper spacing between buttons */
+}
+
+/* Media query for smaller screens */
+@media (max-width: 600px) {
+    .button-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Centers buttons on small screens */
+    }
+
+    .btn {
+        width: 80%; /* Allow buttons to adjust width on smaller screens */
+        margin: 10px 0; /* Space between buttons vertically */
+        transition: background-color 0.3s ease, opacity 0.3s ease;
+    }
+}
+
+
+button {
+    transition: background-color 0.3s ease, opacity 0.3s ease; /* Add transition */
 }
 
 button:hover {
