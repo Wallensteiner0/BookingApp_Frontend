@@ -2,7 +2,7 @@ $(document).ready(function () {
 
     $('#HomeLink').click(function () {
         const roles = getUserRoles();
-        if(roles != null) {
+        if (roles != null) {
             if (roles.includes("ROLE_ADMIN")) {
                 $('#div_content').load('./pages/home_admin.html');
             } else if (roles.includes("ROLE_INSTRUCTOR")) {
@@ -35,15 +35,15 @@ $(document).ready(function () {
         $('#div_content').load('./pages/faq.html');
     });
 
+    $('#RegistrationLink').click(function () {
+        $('#div_content').load('./pages/registration.html');
+    });
+    $('#LoginLink').click(function () {
+        $('#div_content').load('./pages/login.html');
+    });
+
     const roles = getUserRoles();
-    if(roles == null) {
-        $('#RegistrationLink').click(function () {
-            $('#div_content').load('./pages/registration.html');
-        });
-        $('#LoginLink').click(function () {
-            $('#div_content').load('./pages/login.html');
-        });
-    } else {
-        $('#UserNameText').html("Hi " + getUserName());
+    if (roles != null) {
+        $('#UserNameText').html("Hi, " + getUserName() + "!");
     }
 });
