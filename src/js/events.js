@@ -31,7 +31,7 @@ function getEvents() {
                         row += '<td><button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#updateEventModal" onclick="getEvent(' + d.id + ');">Update</button></td>';
                         row += '<td></td>';
                     } else if (isStudent()) {
-                        row += '<td><button class="btn btn-primary" type="button">Book</button></td>';
+                        row += '<td><button class="btn btn-primary" type="button" onclick="bookEvent(' + d.id + ');">Book</button></td>';
                         row += '<td></td>';
                     } else {
                         row += '<td></td><td></td>';
@@ -138,6 +138,37 @@ $('#updateEvent').click(function () {
     }
 
 );
+
+function bookEvent(eventID) {
+    if (eventID === undefined) eventID = -1;
+
+    const apiUrl = "http://localhost:8080/api/bookings?eventId=" + eventID
+
+    $.ajax({
+        type: "POST",
+        url: apiUrl,
+        contentType: "application/json; charset=utf-8",
+        dataType: "json",
+        crossDomain: true,
+        xhrFields: {
+            withCredentials: true
+        },
+        headers: {
+            Authorization: 'Bearer ' + localStorage.getItem("token")
+        },
+        success: function (response, status, xhr) {
+            console.log(response);
+            if (response) {
+                $('#div_content').load('./pages/events.html');
+            } else {
+                console.log("Error...!");
+            }
+        },
+        error: function(xhr, status, error) {
+            console.error('Error during deleting event', error);
+        }
+    });
+}
 
 function deleteEvent(eventID) {
     if (eventID === undefined) eventID = -1;

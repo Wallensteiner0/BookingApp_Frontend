@@ -27,101 +27,20 @@
             integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
             crossorigin="anonymous"></script>
 
-    <script type="text/javascript">
+    <script src="./src/js/errors.js" crossorigin="use-credentials"></script>
+    <script src="./src/js/users.js" crossorigin="use-credentials"></script>
+    <script>
         $(document).ready(function () {
+            $('#div_navigation').load('./pages/navigation.html');
             $('#div_content').load('./pages/home.html');
-
-            $('#LoginLink').click(function () {
-                $('#div_content').load('./pages/login.html');
-            });
-            // $('#RegisterLink').click(function () {
-            //     $('#div_content').load('./pages/registration.html');
-            // });
-            $('#HomeLink').click(function () {
-                const roles = getUserRoles();
-                if(roles != null) {
-                    if (roles.includes("ROLE_ADMIN")) {
-                        $('#div_content').load('./pages/home_admin.html');
-                    } else if (roles.includes("ROLE_INSTRUCTOR")) {
-                        $('#div_content').load('./pages/home_instructor.html');
-                    } else if (roles.includes("ROLE_STUDENT")) {
-                        $('#div_content').load('./pages/home_student.html');
-                    }
-                } else {
-                    $('#div_content').load('./pages/home.html');
-                }
-            });
-            $('#ProfileLink').click(function () {
-                $('#div_content').load('./pages/profile.html');
-            });
-            $('#EventsLink').click(function () {
-                $('#div_content').load('./pages/events.html');
-            });
-            $('#CoursesLink').click(function () {
-                $('#div_content').load('./pages/courses.html');
-            });
-            $('#ContactLink').click(function () {
-                $('#div_content').load('./pages/contact.html', function () {
-                    $('#div_content').addClass('no-center');
-                });
-            });
-            $('#TeamLink').click(function () {
-                $('#div_content').load('./pages/team.html');
-            });
-            $('#FAQLink').click(function () {
-                $('#div_content').load('./pages/faq.html');
-            });
-
             $('#div_footer').load('./pages/footer.html');
         });
-
-        function getUserRoles() {
-            return localStorage.getItem("userRoles");
-        }
-
-        function isAdmin() {
-            var roles = getUserRoles();
-            if(roles) {
-                return roles.includes("ADMIN");
-            }
-            return false;
-        }
-
-        function isInstructor() {
-            var roles = getUserRoles();
-            if(roles) {
-                return roles.includes("INSTRUCTOR");
-            }
-            return false;
-        }
-
-        function isStudent() {
-            var roles = getUserRoles();
-            if(roles) {
-                return roles.includes("STUDENT");
-            }
-            return false;
-        }
     </script>
 </head>
 
 <body>
 <header>
-    <nav class="navbar">
-        <ul class="nav-left">
-            <li><a href="#" id="HomeLink">Home</a></li>
-            <li><a href="#" id="ProfileLink">My Profile</a></li>
-            <li><a href="#" id="CoursesLink">Courses</a></li>
-            <li><a href="#" id="TeamLink">Our Team</a></li>
-            <li><a href="#" id="FAQLink">FAQ</a></li>
-            <li><a href="#" id="ContactLink">Contact</a></li>
-
-        </ul>
-        <ul class="nav-left a">
-            <li style="margin-left: auto;"><a href="#" id="LoginLink">Login</a></li>
-<!--            <li><a href="#" id="RegisterLink">Register</a></li>-->
-        </ul>
-    </nav>
+    <div id="div_navigation"></div>
 </header>
 
 <main>
