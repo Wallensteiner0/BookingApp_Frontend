@@ -133,3 +133,16 @@ p {
         flex: 0 1 calc(100% - 40px);
     }
 }
+
+.courses ul li {
+    cursor: pointer; /* To show it's clickable */
+    padding: 10px;
+    border: 1px solid #ddd; /* Optional border for visual styling */
+    transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+.courses ul li:hover {
+    background-color: #65a503 !important; /* Apply the same hover color */
+    border: none; /* Remove border on hover, if desired */
+    color: white; /* Change text color on hover for better visibility */
+}
