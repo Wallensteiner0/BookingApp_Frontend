@@ -34,6 +34,7 @@ $("#loginBtn").click(function () {
                 if (response) {
                     const roles = response.roles;
                     localStorage.setItem("userRoles",response.roles);
+                    localStorage.setItem("userName",response.username);
 
                     if (roles.includes("ROLE_ADMIN")) {
                         $('#div_content').load('./pages/home_admin.html');
@@ -44,6 +45,7 @@ $("#loginBtn").click(function () {
                     } else {
                         //$('#div_content').load('./pages/home.html');
                     }
+                    $('#div_navigation').load('./pages/navigation_loggedin.html');
                 } else {
                     console.log("Login failed");
                 }
