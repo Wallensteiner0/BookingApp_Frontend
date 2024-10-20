@@ -43,8 +43,8 @@ function getEvents() {
                 console.log("Error...!");
             }
         },
-        error: function (xhr, status, error) {
-            console.error('Error during catching events', error);
+        error: function(xhr, status, error) {
+            displayError('eventlist_error_container', xhr, status, error);
         }
     });
 }
@@ -89,7 +89,7 @@ $('#saveEvent').click(function () {
             }
         },
         error: function(xhr, status, error) {
-            console.error('Error during creating event', error);
+            displayError('event_create_error_container', xhr, status, error);
         }
     });
     }
@@ -132,7 +132,7 @@ $('#updateEvent').click(function () {
                 }
             },
             error: function(xhr, status, error) {
-                console.error('Error during updating event', error);
+                displayError('event_update_error_container', xhr, status, error);
             }
         });
     }
@@ -165,7 +165,7 @@ function bookEvent(eventID) {
             }
         },
         error: function(xhr, status, error) {
-            console.error('Error during deleting event', error);
+            displayError('eventlist_error_container', xhr, status, error);
         }
     });
 }
@@ -196,7 +196,7 @@ function deleteEvent(eventID) {
             }
         },
         error: function(xhr, status, error) {
-            console.error('Error during deleting event', error);
+            displayError('eventlist_error_container', xhr, status, error);
         }
     });
 }
@@ -232,7 +232,7 @@ function getEvent(eventID) {
             }
         },
         error: function(xhr, status, error) {
-            console.error('Error during getting single event', error);
+            displayError('eventlist_error_container', xhr, status, error);
         }
     });
 }

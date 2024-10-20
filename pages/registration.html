@@ -4,13 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script type="text/javascript">
-        $(document).ready(function () {
-            $('#registerBtn').click(function () {
-                $('#div_content').load('./pages/home_student.html');
-            });
-        });
-    </script>
     <title>Registration</title>
     <style>
         .error {
@@ -35,6 +28,7 @@
 
 <div class="container">
     <h1 class="registration-header color-change" style="text-align: left">Registration</h1>
+    <div id="registration_error_container"></div>
     <div class="row">
         <div class="col" id="registration-form">
             <div class="form-group row">
@@ -89,7 +83,7 @@
                 </div>
             </div>
             <br>
-            <button type="submit" class="btn btn-primary" id="registerBtn">Register</button>
+            <button type="button" class="btn btn-primary" id="registerBtn">Register</button>
         </div>
     </div>
 </div>

@@ -15,7 +15,7 @@
     <div class="admin">
 
         <h1 style="padding-bottom: 20px">List of all Users</h1>
-
+        <div id="userlist_error_container"></div>
         <div class="row">
             <!-- Button trigger modal -->
             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#createUserModal"
@@ -51,6 +51,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
+                    <div id="user_create_error_container"></div>
                     <table>
                         <tr>
                             <td>Username:</td>
@@ -115,6 +116,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
+                    <div id="user_update_error_container"></div>
                     <table>
                         <tr>
                             <td>User ID:</td>

@@ -52,11 +52,10 @@ $("#loginBtn").click(function () {
             },
             error: function(xhr, status, error) {
                 console.error('Error during login:', error);
-                $('#result').val('Error during login');
+                displayError('login_error_container', xhr, status, error);
             }
         });
     } else {
-        $('.alert').show();
-        alert("Username or password missing!");
+        displayErrorMsg('login_error_container','Username or password missing!');
     }
 });
