@@ -45,8 +45,8 @@ function getBookings() {
                 console.log("Error...!");
             }
         },
-        error: function (xhr, status, error) {
-            console.error('Error during catching events', error);
+        error: function(xhr, status, error) {
+            displayError('bookings_error_container', xhr, status, error);
         }
     });
 }
@@ -79,7 +79,7 @@ function deleteBooking(bookingID) {
             }
         },
         error: function(xhr, status, error) {
-            console.error('Error during deleting event', error);
+            displayError('bookings_error_container', xhr, status, error);
         }
     });
 }

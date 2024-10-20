@@ -17,8 +17,11 @@ $("#country").append(function () {
                     $("#country").append(o);
                 });
             } else {
-                console.log("No countries received!");
+                displayErrorMsg('registration_error_container','No countries received!');
             }
+        },
+        error: function(xhr, status, error) {
+            displayError('registration_error_container', xhr, status, error);
         }
     });
 });
@@ -36,19 +39,23 @@ $("#gender").change(function () {
 $("#registerBtn").click(function () {
 
     const apiUrl = "http://localhost:8080/api/auth/register"
-    const data = {
-        "username": $('#username').val(),
-        "email": $('#email').val(),
-        "password": $('#password').val(),
-        "gender": $('#gender').val(),
-        "other": $('#other').val(),
-        "country": {
-            "id": $('#country').val(),
-            "name": $('#country').text()
-        }
-    }
+    const username = $('#username').val();
+    const email = $('#email').val();
+    const password = $('#password').val();
 
-    if (($("#username").val() !== "") && ($("#email").val() !== "") && ($("#password").val() !== "")){
+    if ((username !== "") && (email !== "") && (password !== "")){
+        const data = {
+            "username": username,
+            "email": email,
+            "password": password,
+            "gender": $('#gender').val(),
+            "other": $('#other').val(),
+            "country": {
+                "id": $('#country').val(),
+                "name": $('#country').text()
+            }
+        }
+
         $.ajax({
             type: "POST",
             url: apiUrl,
@@ -59,12 +66,16 @@ $("#registerBtn").click(function () {
                 console.log(response);
                 if (response) {
                     alert(response.message);
+                    $('#div_content').load('./pages/login.html');
                 } else {
-                    console.log("Registration failed");
+                    displayErrorMsg('registration_error_container', 'Registration failed');
                 }
+            },
+            error: function (xhr, status, error) {
+                displayError('registration_error_container', xhr, status, error);
             }
         });
     } else {
-        alert("Username, email and password are mandatory!");
+        displayErrorMsg('registration_error_container', 'Username, email and password are mandatory!');
     }
 });

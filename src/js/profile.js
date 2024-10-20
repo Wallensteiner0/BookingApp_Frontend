@@ -24,11 +24,11 @@ function getProfile() {
                 $("#gender").val(response.gender);
                 loadPicture(response.profilePictureRef);
             } else {
-                console.log("Error...!");
+                displayErrorMsg('profile_error_container','Error retrieving profile!');
             }
         },
         error: function(xhr, status, error) {
-            console.error('Error during catching profile:', error);
+            displayError('profile_error_container', xhr, status, error);
         }
     });
 }
@@ -67,10 +67,28 @@ async function loadPicture(profilePictureRef) {
                 document.getElementById('profile_pic').setAttribute('src', "data:" + type + ";base64," + response);
             },
             error: function(xhr, status, error) {
-                console.error('Error downloading profile picture', error);
+                displayError('profile_error_container', xhr, status, error);
             }
         });
     } else {
         document.getElementById('profile_pic').setAttribute('src', "../src/images/profile_pic.png");
     }
+}
+
+async function uploadFile() {
+    let formData = new FormData();
+    formData.append("picture", fileupload.files[0]);
+    await fetch('http://localhost:8080/api/pictures', {
+        method: "POST",
+        body: formData,
+        crossDomain: true,
+        xhrFields: {
+            withCredentials: true
+        },
+        headers: {
+            Authorization: 'Bearer ' + localStorage.getItem("token")
+        }
+    });
+    displaySuccessMsg('profile_error_container', 'The picture has been uploaded successfully.');
+    setTimeout(() => {  $('#div_content').load('./pages/profile.html') }, 3000);
 }

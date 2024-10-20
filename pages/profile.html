@@ -18,32 +18,11 @@
     </style>
     <!-- External JavaScript -->
     <script src="../src/js/profile.js" crossorigin="use-credentials"></script>
-
-    <script>
-        async function uploadFile() {
-            let formData = new FormData();
-            formData.append("picture", fileupload.files[0]);
-            await fetch('http://localhost:8080/api/pictures', {
-                method: "POST",
-                body: formData,
-                crossDomain: true,
-                xhrFields: {
-                    withCredentials: true
-                },
-                headers: {
-                    Authorization: 'Bearer ' + localStorage.getItem("token")
-                }
-            });
-            alert('The picture has been uploaded successfully.');
-            $('#div_content').load('./pages/profile.html');
-
-        }
-    </script>
-
 </head>
 <body>
 <div class="container">
     <h1 class="profile-header">Profile</h1>
+    <div id="profile_error_container"></div>
     <div class="row" style="text-align: center">
         <div id="profile_pic_container">
             <img id="profile_pic"  style="width: 100px; max-height: 200px"/>

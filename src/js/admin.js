@@ -37,8 +37,8 @@ function getUsers() {
                 console.log("Error...!");
             }
         },
-        error: function (xhr, status, error) {
-            console.error('Error during catching events', error);
+        error: function(xhr, status, error) {
+            displayError('userlist_error_container', xhr, status, error);
         }
     });
 }
@@ -72,6 +72,7 @@ function deleteUser(userID) {
         },
         error: function(xhr, status, error) {
             console.error('Error during deleting user', error);
+            displayError('userlist_error_container', xhr, status, error);
         }
     });
 }
@@ -118,6 +119,7 @@ $('#saveUser').click(function () {
             },
             error: function(xhr, status, error) {
                 console.error('Error during creating user', error);
+                displayError('user_create_error_container', xhr, status, error);
             }
         });
     }
@@ -144,6 +146,9 @@ $("#country").append(function () {
             } else {
                 console.log("No countries received!");
             }
+        },
+        error: function(xhr, status, error) {
+            displayError('user_create_error_container', xhr, status, error);
         }
     });
 });
@@ -169,6 +174,9 @@ $("#countryU").append(function () {
             } else {
                 console.log("No countries received!");
             }
+        },
+        error: function(xhr, status, error) {
+            displayError('user_update_error_container', xhr, status, error);
         }
     });
 });
@@ -205,7 +213,7 @@ function getUser(userID) {
             }
         },
         error: function(xhr, status, error) {
-            console.error('Error during getting single event', error);
+            displayError('userlist_error_container', xhr, status, error);
         }
     });
 }
@@ -250,7 +258,7 @@ $('#updateUser').click(function () {
                 }
             },
             error: function(xhr, status, error) {
-                console.error('Error during updating event', error);
+                displayError('user_update_error_container', xhr, status, error);
             }
         });
     }
