@@ -36,7 +36,8 @@ function getProfile() {
 getProfile();
 
 async function loadPicture(profilePictureRef) {
-    if(profilePictureRef != null) {
+    alert(profilePictureRef);
+    if(profilePictureRef != null && profilePictureRef.length !== 0) {
         $.ajax({
             url: 'http://localhost:8080/api/pictures/' + profilePictureRef,
             type: 'GET',
