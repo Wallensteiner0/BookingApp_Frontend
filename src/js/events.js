@@ -18,20 +18,26 @@ function getEvents() {
             console.log(response);
             if (response) {
                 var events = response.events;
-                $.each(events, function(i, d) {
+                $.each(events, function(i, event) {
                     var row = '<tr>';
-                    $.each(d, function (j, e) {
-                        console.log(e);
-                        row += '<td>' + e + '</td>';
-                    });
+
+                    row += '<td>' + event.id + '</td>';
+                    row += '<td>' + event.title + '</td>';
+                    row += '<td>' + event.eventType + '</td>';
+                    row += '<td>' + event.eventStatus + '</td>';
+                    row += '<td>' + event.price + '</td>';
+                    row += '<td>' + displayDate(event.startDate) + '</td>';
+                    row += '<td>' + displayDate(event.createdOn) + '</td>';
+                    row += '<td>' + displayDate(event.lastUpdatedOn) + '</td>';
+
                     if(isAdmin()) {
-                        row += '<td><button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#updateEventModal" onclick="getEvent(' + d.id + ');">Update</button></td>';
-                        row += '<td><button class="btn btn-primary" type="button" onclick="deleteEvent(' + d.id + ');">Delete</button></td>';
+                        row += '<td><button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#updateEventModal" onclick="getEvent(' + event.id + ');">Update</button></td>';
+                        row += '<td><button class="btn btn-primary" type="button" onclick="deleteEvent(' + event.id + ');">Delete</button></td>';
                     } else if (isInstructor()) {
-                        row += '<td><button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#updateEventModal" onclick="getEvent(' + d.id + ');">Update</button></td>';
+                        row += '<td><button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#updateEventModal" onclick="getEvent(' + event.id + ');">Update</button></td>';
                         row += '<td></td>';
                     } else if (isStudent()) {
-                        row += '<td><button class="btn btn-primary" type="button" onclick="bookEvent(' + d.id + ');">Book</button></td>';
+                        row += '<td><button class="btn btn-primary" type="button" onclick="bookEvent(' + event.id + ');">Book</button></td>';
                         row += '<td></td>';
                     } else {
                         row += '<td></td><td></td>';
@@ -235,4 +241,31 @@ function getEvent(eventID) {
             displayError('eventlist_error_container', xhr, status, error);
         }
     });
+}
+
+function displayDate(date) {
+    return sqlToJsDate(date).toLocaleString("en-UK", {
+        day: "numeric",
+        month: "numeric",
+        year: "numeric",
+        hour: "numeric",
+        minute: "2-digit"
+    });
+}
+function sqlToJsDate(date){
+    var sqlDate = new String(date);
+    //sqlDate in SQL DATETIME format ("yyyy-mm-dd hh:mm:ss.ms")
+    var sqlDateArr1 = sqlDate.split("-");
+    //format of sqlDateArr1[] = ['yyyy','mm','dd hh:mm:ms']
+    var sYear = sqlDateArr1[0];
+    var sMonth = (Number(sqlDateArr1[1]) - 1).toString();
+    var sqlDateArr2 = sqlDateArr1[2].split("T");
+    //format of sqlDateArr2[] = ['dd', 'hh:mm:ss.ms']
+    var sDay = sqlDateArr2[0];
+    var sqlDateArr3 = sqlDateArr2[1].split(":");
+    //format of sqlDateArr3[] = ['hh','mm','ss.ms']
+    var sHour = sqlDateArr3[0];
+    var sMinute = sqlDateArr3[1];
+
+    return new Date(sYear,sMonth,sDay,sHour,sMinute,0,0);
 }
