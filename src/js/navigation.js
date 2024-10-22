@@ -41,6 +41,14 @@ $(document).ready(function () {
     $('#LoginLink').click(function () {
         $('#div_content').load('./pages/login.html');
     });
+    $('#LogoutLink').click(function () {
+        localStorage.removeItem("token");
+        localStorage.removeItem("userRoles");
+        localStorage.removeItem("userName");
+        $('#div_navigation').load('./pages/navigation.html');
+        $('#div_content').load('./pages/home.html');
+    });
+
 
     const roles = getUserRoles();
     if (roles != null) {
