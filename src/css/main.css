@@ -1,4 +1,8 @@
 /* Shared Styles for all pages */
+#HomeButton {
+    width: 49px;
+    height: 48px;
+}
 
 /* Background Image for all pages */
 .background-image {
