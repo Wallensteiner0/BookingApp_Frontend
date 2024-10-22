@@ -21,8 +21,8 @@ div.container div:hover {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Intensiverer Schatten beim Hover */
 }
 
-/* Bild-Styling */
-img {
+/* Bild-Styling für Team-Bilder */
+.team-picture {
     width: auto;
     height: 100px;
     border-radius: 50%; /* Runde Ecken für das Bild */

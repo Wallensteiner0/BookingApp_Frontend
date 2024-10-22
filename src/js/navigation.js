@@ -14,6 +14,9 @@ $(document).ready(function () {
             $('#div_content').load('./pages/home.html');
         }
     });
+    $('#HomeButton').click(function () {
+        $('#div_content').load('./pages/home.html');
+    });
     $('#ProfileLink').click(function () {
         $('#div_content').load('./pages/profile.html');
     });
