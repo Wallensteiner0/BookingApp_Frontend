@@ -15,7 +15,7 @@
 
 /* Common container for all pages */
 .page-body.container {
-    width: 85%;
+    width: 75%;
     margin: 30px auto;
     background-color: rgba(255, 255, 255, 0.9);
     color: #2a2a2a;
@@ -61,7 +61,7 @@ body.home-page {
 .home .container {
     text-align: center;
     padding: 30px 20px;
-    width: 85%;
+    width: 75%;
     margin: 0 auto; /* Center the container */
 }
 
@@ -80,6 +80,20 @@ body, html {
     height: 100vh;
     display: flex;
     flex-direction: column;
+}
+
+.home.home-body.container, .page-body.container {
+    max-width: 800px;  /* Fixed width of 750px */
+    margin: 0 auto;  /* Center the container horizontally */
+    padding: 20px;  /* Optional padding inside the container */
+}
+
+/* Optional: Media query to handle smaller screens */
+@media (max-width: 768px) {
+    .home-body .container {
+        width: 100%;  /* On small screens, make it full width */
+        padding: 10px;  /* Adjust padding if needed */
+    }
 }
 
 main {
@@ -233,7 +247,7 @@ footer a {
 }
 
 .btn {
-    font-size: 18px !important;
+    font-size: 16px !important;
     transition: background-color 0.3s ease, border 0.3s ease;
 }
 
