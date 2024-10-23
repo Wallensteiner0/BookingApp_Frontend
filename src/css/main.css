@@ -83,7 +83,7 @@ body, html {
 }
 
 .home.home-body.container, .page-body.container {
-    max-width: 800px;  /* Fixed width of 750px */
+    max-width: 850px;
     margin: 0 auto;  /* Center the container horizontally */
     padding: 20px;  /* Optional padding inside the container */
 }
