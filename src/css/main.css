@@ -349,3 +349,8 @@ button:hover {
     opacity: 0.9;
     border: none;
 }
+
+#div_content {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
