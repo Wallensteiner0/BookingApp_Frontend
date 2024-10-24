@@ -13,31 +13,27 @@
             $('#EventsButton').click(function () {
                 $('#div_content').load('./pages/events.html');
             });
-            $('#BookingsButton').click(function () {
-                $('#div_content').load('./pages/bookings.html');
-            });
         });
     </script>
 </head>
 <body>
 <div class="container">
     <div class="instructor">
-        <h1 style="padding-bottom: 20px">Hello Instructor</h1>
-        <h2>List of all upcoming Events</h2>
-        <div class="button-container">
-            <table style="width: 100%;text-align: center">
-                <tr>
-                    <td>
-                        <button class="btn btn-primary" type="button" id="EventsButton">Events</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <button class="btn btn-primary" type="button" id="ProfileButton">My Profile</button>
-                    </td>
-                </tr>
-            </table>
+        <section class="student-pic">
+            <img id="contact" src="../src/images/instructor_home.jpg" alt="Instructor" style="padding-bottom: 40px">
+        </section>
+
+        <div class="container">
+            <div class="row" style="align-content: center">
+                <div class="col-sm">
+                    <button class="btn btn-primary" type="button" id="EventsButton">Events</button>
+                </div>
+                <div class="col-sm">
+                    <button class="btn btn-primary" type="button" id="ProfileButton">My Profile</button>
+                </div>
+            </div>
         </div>
+
     </div>
 </div>
 </body>
