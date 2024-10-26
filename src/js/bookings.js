@@ -47,7 +47,7 @@ function getBookings() {
             }
         },
         error: function(xhr, status, error) {
-            displayError('bookings_error_container', xhr, status, error);
+            displayError('bookinglist_error_container', xhr, status, error);
         }
     });
 }
@@ -74,13 +74,14 @@ function deleteBooking(bookingID) {
         success: function (response, status, xhr) {
             console.log(response);
             if (response) {
-                $('#div_content').load('./pages/bookings.html');
+                displaySuccessMsg('bookinglist_error_container', 'Booking deleted successfully!');
+                setTimeout(() => {  $('#div_content').load('./pages/bookings.html') }, 2500);
             } else {
                 console.log("Error...!");
             }
         },
         error: function(xhr, status, error) {
-            displayError('bookings_error_container', xhr, status, error);
+            displayError('bookinglist_error_container', xhr, status, error);
         }
     });
 }
