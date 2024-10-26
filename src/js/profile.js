@@ -105,7 +105,7 @@ async function loadPicture(profilePictureRef) {
 async function uploadFile() {
     let formData = new FormData();
     formData.append("picture", fileupload.files[0]);
-    await fetch('http://localhost:8080/api/pictures', {
+    const response = await fetch('http://localhost:8080/api/pictures', {
         method: "POST",
         body: formData,
         crossDomain: true,
@@ -116,8 +116,13 @@ async function uploadFile() {
             Authorization: 'Bearer ' + localStorage.getItem("token")
         }
     });
-    displaySuccessMsg('profile_error_container', 'The picture has been uploaded successfully.');
-    setTimeout(() => {  $('#div_content').load('./pages/profile.html') }, 2000);
+    const data = await response.json();
+    if(response.ok) {
+         displaySuccessMsg('profile_error_container', 'The picture has been uploaded successfully.');
+         setTimeout(() => {  $('#div_content').load('./pages/profile.html') }, 2000);
+    } else {
+         displayErrorMsg('profile_error_container',data.title + ": " + data.detail);
+    }
 }
 
 $('#updateProfile').click(function () {
