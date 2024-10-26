@@ -65,7 +65,10 @@ function deleteUser(userID) {
         success: function (response, status, xhr) {
             console.log(response);
             if (response) {
-                $('#div_content').load('./pages/home_admin.html');
+                displaySuccessMsg('userlist_error_container', 'User deleted successfully!');
+                setTimeout(() => {
+                    $('#div_content').load('./pages/users.html')
+                }, 2000);
             } else {
                 console.log("Error...!");
             }
@@ -111,8 +114,11 @@ $('#saveUser').click(function () {
                 if (response) {
                     //bug fix for modal hide
                     $(".modal-backdrop").remove();
-                    $("#createEventModal").hide();
-                    $('#div_content').load('./pages/home_admin.html');
+                    displaySuccessMsg('user_create_error_container', 'User created successfully!');
+                    setTimeout(() => {
+                        $("#createUserModal").hide();
+                        $('#div_content').load('./pages/users.html')
+                    }, 2000);
                 } else {
                     console.log("Error...!");
                 }
@@ -251,8 +257,11 @@ $('#updateUser').click(function () {
                 if (response) {
                     //bug fix for modal hide
                     $(".modal-backdrop").remove();
-                    $('#updateUserModal').hide();
-                    $('#div_content').load('./pages/home_admin.html');
+                    displaySuccessMsg('user_update_error_container', 'User updated successfully!');
+                    setTimeout(() => {
+                        $("#updateUserModal").hide();
+                        $('#div_content').load('./pages/users.html')
+                    }, 2000);
                 } else {
                     console.log("Error...!");
                 }

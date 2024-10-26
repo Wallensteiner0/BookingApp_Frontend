@@ -203,7 +203,8 @@ function deleteEvent(eventID) {
         success: function (response, status, xhr) {
             console.log(response);
             if (response) {
-                $('#div_content').load('./pages/events.html');
+                displaySuccessMsg('eventlist_error_container', 'Event deleted successfully!');
+                setTimeout(() => {  $('#div_content').load('./pages/events.html') }, 2000);
             } else {
                 console.log("Error...!");
             }

@@ -75,7 +75,7 @@ function deleteBooking(bookingID) {
             console.log(response);
             if (response) {
                 displaySuccessMsg('bookinglist_error_container', 'Booking deleted successfully!');
-                setTimeout(() => {  $('#div_content').load('./pages/bookings.html') }, 2500);
+                setTimeout(() => {  $('#div_content').load('./pages/bookings.html') }, 2000);
             } else {
                 console.log("Error...!");
             }

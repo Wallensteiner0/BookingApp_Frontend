@@ -8,10 +8,8 @@ $("#country").append(function () {
         contentType: "application/json; charset=utf-8",
         dataType: "json",
         success: function (response, status, xhr) {
-            console.log(response);
             if (response) {
                 $(response.countries).each(function () {
-                    console.log($(this));
                     var o = new Option(this.name, this.id);
                     // $(o).html("option text");
                     $("#country").append(o);
@@ -27,8 +25,6 @@ $("#country").append(function () {
 });
 
 $("#gender").change(function () {
-
-    console.log($(this).val());
     if ($(this).val() === "OTHER") {
         $("#otherDiv").css("visibility", "visible");
     } else {
@@ -63,10 +59,9 @@ $("#registerBtn").click(function () {
             data: JSON.stringify(data),
             dataType: "json",
             success: function(response, status, xhr) {
-                console.log(response);
                 if (response) {
-                    alert(response.message);
-                    $('#div_content').load('./pages/login.html');
+                    displaySuccessMsg('registration_error_container', 'Thank you for registering!')
+                    setTimeout(() => {  $('#div_content').load('./pages/login.html') }, 2000);
                 } else {
                     displayErrorMsg('registration_error_container', 'Registration failed');
                 }
