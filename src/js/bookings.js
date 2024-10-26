@@ -29,6 +29,7 @@ function getBookings() {
                     row += '<td>' + event.price + '</td>';
                     row += '<td>' + displayDate(event.startDate) + '</td>';
                     row += '<td>' + displayDate(booking.createdOn) + '</td>';
+                    row += '<td>' + user.username + '</td>';
                     if(isAdmin()) {
                         row += '<td><button class="btn btn-primary" type="button" onclick="deleteBooking(' + booking.id + ');">Delete</button></td>';
                     } else if (isInstructor()) {
