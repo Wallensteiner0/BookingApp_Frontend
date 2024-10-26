@@ -88,8 +88,11 @@ $('#saveEvent').click(function () {
             if (response) {
                 //bug fix for modal hide
                 $(".modal-backdrop").remove();
-                $("#createEventModal").hide();
-                $('#div_content').load('./pages/events.html');
+                displaySuccessMsg('event_create_error_container', 'Event created successfully!');
+                setTimeout(() => {
+                    $('#createEventModal').hide();
+                    $('#div_content').load('./pages/events.html');
+                }, 2000);
             } else {
                 console.log("Error...!");
             }
@@ -131,8 +134,11 @@ $('#updateEvent').click(function () {
                 if (response) {
                     //bug fix for modal hide
                     $(".modal-backdrop").remove();
-                    $('#updateEventModal').hide();
-                    $('#div_content').load('./pages/events.html');
+                    displaySuccessMsg('event_update_error_container', 'Event updated successfully!');
+                    setTimeout(() => {
+                        $('#updateEventModal').hide();
+                        $('#div_content').load('./pages/events.html');
+                    }, 2000);
                 } else {
                     console.log("Error...!");
                 }
@@ -233,7 +239,7 @@ function getEvent(eventID) {
                 $('#eventTypeU').val(response.eventType);
                 $('#eventStatusU').val(response.eventStatus);
                 $('#eventPriceU').val(response.price);
-                $('#eventDateU').val(response.startDate);
+                $('#eventDateU').val(sqlForDateTimePicker(response.startDate));
             } else {
                 console.log("Error...!");
             }
@@ -270,3 +276,21 @@ function sqlToJsDate(date){
 
     return new Date(sYear,sMonth,sDay,sHour,sMinute,0,0);
 }
+
+function sqlForDateTimePicker(date) {
+    return date.substring(0,16);
+}
+
+function displayCreateEventButton() {
+    if (isInstructor() || isAdmin()) {
+        const createEventContainer = document.getElementById('createEventButtonContainer');
+        createEventContainer.innerHTML =
+            '<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#createEventModal"\n' +
+            '                id="createEventModalButton">\n' +
+            '            Create New Event\n' +
+            '        </button>'
+        ;
+    }
+}
+
+displayCreateEventButton();

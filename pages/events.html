@@ -19,12 +19,7 @@
     <h1 class="login-header color-change" style="text-align: left">Events
         <br><span style="font-size: 20px; color: #65a503">Theory Classes, Driving Practice Sessions, First Aid and Exams</span></h1>
     <div id="eventlist_error_container"></div>
-    <div class="row">
-        <!-- Button trigger modal -->
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#createEventModal"
-                id="createEventModalButton" style="display: none;">
-            Create New Event
-        </button>
+    <div id="createEventButtonContainer" class="row">
     </div>
     <div class="row table-responsive overflow-y-scroll" style="padding-top: 20px; max-height: 800px;">
         <table class="table table-striped table-hover" style="border: 1px solid black; font-size: 14px"
@@ -94,7 +89,7 @@
                     </tr>
                     <tr>
                         <td>Start:</td>
-                        <td><input type="date" id="eventDate"></td>
+                        <td><input type="datetime-local" id="eventDate"></td>
                     </tr>
                 </table>
             </div>
@@ -153,7 +148,7 @@
                     </tr>
                     <tr>
                         <td>Start:</td>
-                        <td><input type="date" id="eventDateU"></td>
+                        <td><input type="datetime-local" id="eventDateU"></td>
                     </tr>
                 </table>
             </div>
@@ -167,9 +162,7 @@
 
 <script>
     $(document).ready(function () {
-        if (isInstructor() || isAdmin()) {
-            document.getElementById("createEventModalButton").style.display = "block";
-        }
+
     });
 </script>
 </body>
