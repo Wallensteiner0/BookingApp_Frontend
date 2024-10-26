@@ -54,4 +54,21 @@ $(document).ready(function () {
     if (roles != null) {
         $('#UserNameText').html("Hi, " + getUserName() + "!");
     }
+
 });
+
+function navigateHome() {
+        const roles = getUserRoles();
+        if (roles != null) {
+            if (roles.includes("ROLE_ADMIN")) {
+                $('#div_content').load('./pages/home_admin.html');
+            } else if (roles.includes("ROLE_INSTRUCTOR")) {
+                $('#div_content').load('./pages/home_instructor.html');
+            } else if (roles.includes("ROLE_STUDENT")) {
+                $('#div_content').load('./pages/home_student.html');
+            }
+        } else {
+            $('#div_content').load('./pages/home.html');
+        }
+    return false;
+}

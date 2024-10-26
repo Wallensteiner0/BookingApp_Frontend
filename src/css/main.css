@@ -340,3 +340,11 @@ button:hover {
     margin-top: 20px;
     margin-bottom: 20px;
 }
+
+.breadcrumb-item {
+    font-size: 14px;
+}
+
+.breadcrumb-item a {
+    text-decoration: none;
+}
