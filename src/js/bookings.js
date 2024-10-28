@@ -27,7 +27,6 @@ function getBookings() {
                     row += '<td>' + event.title + '</td>';
                     row += '<td>' + event.eventType + '</td>';
                     row += '<td>' + event.price + '</td>';
-                    row += '<td>' + event.eventStatus + '</td>';
                     row += '<td>' + displayDate(event.startDate) + '</td>';
                     row += '<td>' + displayDate(booking.createdOn) + '</td>';
                     row += '<td>' + user.username + '</td>';
